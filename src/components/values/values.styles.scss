@@ -1,0 +1,13 @@
+.values-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 15vh;
+  height: 70vh;
+
+  .values {
+    color: black;
+    background-color: white;
+    width: 70vw;
+  }
+}
