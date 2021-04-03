@@ -2,12 +2,16 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-  margin-top: 15vh;
-  height: 70vh;
+  margin-top: 2vh;
+  // height: 70vh;
+  font-family: "Roboto Slab", serif;
+  font-family: "Lora", serif;
+  font-size: 22px;
+  //font-family: "Playfair Display", serif;
 
   .values {
     color: black;
     background-color: white;
-    width: 70vw;
+    // width: 70vw;
   }
 }

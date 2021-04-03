@@ -8,7 +8,7 @@ function Menu() {
   return (
     <div className="menu">
       <Link to="/">
-        <div className="link">picture</div>
+        <div className="link">home</div>
       </Link>
       <Link to="/values">
         <div className="link">values</div>
@@ -21,9 +21,6 @@ function Menu() {
       </Link>
       <Link to="/meeting">
         <div className="link">meeting</div>
-      </Link>
-      <Link to="/terms">
-        <div className="link">terms</div>
       </Link>
     </div>
   );

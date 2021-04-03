@@ -15,7 +15,9 @@ function Page() {
     <div>
       <Switch>
         <Route exact path="/">
-          <div></div>
+          <div>
+          <img src="https://i.ibb.co/mJwbmPj/barn-2594975.jpg" />
+          </div>
         </Route>
         <Route path="/values">
           <Values />
@@ -30,7 +32,7 @@ function Page() {
           <Meeting />
         </Route>
       </Switch>
-      <Route exact path="/meeting">
+      <Route exact path="/terms">
         <Terms />
       </Route>
     </div>
