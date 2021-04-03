@@ -9,4 +9,18 @@
   //font-family: "Lora", serif;
   font-size: 16px;
   //font-family: "Playfair Display", serif;
+  margin-bottom: 30px;
+  .book-data{
+    width: 60vw;
+    .title{
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 600;
+
+    }
+    .author{
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
 }
