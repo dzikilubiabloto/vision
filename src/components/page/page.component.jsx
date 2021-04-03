@@ -14,27 +14,24 @@ function Page() {
   return (
     <div>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/vision/">
           <div>
           <img src="https://i.ibb.co/mJwbmPj/barn-2594975.jpg" />
           </div>
         </Route>
-        <Route path="/values">
+        <Route path="/vision/values">
           <Values />
         </Route>
-        <Route path="/dreaming">
+        <Route path="/vision/dreaming">
           <Dreaming />
         </Route>
-        <Route exact path="/books">
+        <Route exact path="/vision/books">
           <Books />
         </Route>
-        <Route exact path="/meeting">
+        <Route exact path="/vision/meeting">
           <Meeting />
         </Route>
       </Switch>
-      <Route exact path="/terms">
-        <Terms />
-      </Route>
     </div>
   );
 }
