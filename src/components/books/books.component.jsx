@@ -88,7 +88,18 @@ const books2 = [
     description:
       "Gaian Economics: Living Well within Planetary Limits (The Economic Key) is the second in the series of Four Keys that supplement the Curriculum. This particular book is for anyone seeking solutions to the economic problems facing both global society and local communities in a sustainable world.",
   },
+  {
+    image: "https://i.ibb.co/vDcqG0F/1001-ways-cover.jpg",
+    link: "https://ecovillage.org/resources/market/ecovillage-1001-ways-to-heal-the-planet/?gclid=CjwKCAjwx6WDBhBQEiwA_dP8rUnu5fWP0rf-jD2H0xcp0BhqcaKrcs1fldvgYMBDEPwVuCB_FOfopRoCQqMQAvD_BwE",
+    title: "Ecovillage: 1001 Ways to Heal the Planet",
+    author:
+      "Edited by: Kosha Joubert and Leila Dregger",
+    types: "I can share EBOOK",
+    description:
+      "'In this ecovillage book, explore a selection of ecovillage projects from all over the world, including richness and diversity with examples from Europe, Latin America, Asia, Africa and North America.'",
+  },
 ];
+
 
 function Books() {
   return (
