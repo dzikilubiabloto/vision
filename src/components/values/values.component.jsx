@@ -6,13 +6,9 @@ function Values() {
   return (
     <div className="values-container">
       <div className="values">
-        <img src="https://i.ibb.co/9n3QXdD/las-p.png" />
+        <img src="https://i.ibb.co/9n3QXdD/las-p.png" alt="calm lake and forest"/>
         <div id="write" className="">
           <h3>
-            <a
-              name="values-i-would-like-to-be-important-in-a-community-i-live-in-"
-              className="md-header-anchor"
-            ></a>
           </h3>
           <p>
             <em>

@@ -1,5 +1,8 @@
 const quotes = [
-  ["", ""],
+  [
+    `She would smile and show no surprise, convinced as she was, the same as I, that casual meetings are apt to be just the opposite, and that people who make dates are the same kind who need lines on their writing paper, or who always squeeze up from the bottom on a tube of toothpaste.`,
+    "Julio Cortazar, Hopscotch",
+  ],
   ["", ""],
   ["", ""],
   ["", ""],

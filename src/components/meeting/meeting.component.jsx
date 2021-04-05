@@ -6,9 +6,9 @@ function Meeting() {
   return (
     <div className="values-container">
       <div className="values meeting">
-        <img src="https://i.ibb.co/kDHjSnn/meeting.jpg" />
-        <div class="typora-export">
-          <div id="write" class="">
+        <img src="https://i.ibb.co/kDHjSnn/meeting.jpg" alt="table with chairs next to big window with nature outside" />
+        <div className="typora-export">
+          <div id="write" className="">
             <p>
               <span>
                 <em>
@@ -73,23 +73,17 @@ function Meeting() {
               </li>
             </ul>
             <h3 >
-              <a name="first-meeting-2h" class="md-header-anchor"></a>
               <strong>
                 <span id="first-meeting">FIRST MEETING: </span>
               </strong>
               <span>(2h)</span>
             </h3>
-            <a name="facilitator-talita" class="md-header-anchor"></a>
             <p>
               <strong>
                 <span>Facilitator</span>
               </strong>
               <span>: Talita</span>
             </p>
-            <a
-              name="notary-saving-information---to-be-discussed"
-              class="md-header-anchor"
-            ></a>
             <p>
               <strong>
                 <span>Notary</span>
@@ -97,17 +91,12 @@ function Meeting() {
               <span>: (saving information - to be discussed)</span>
             </p>
             <h4>
-              <a
-                name="beginning-one-minute-of-silence-for-arrival"
-                class="md-header-anchor"
-              ></a>
               <strong>
                 <span>Beginning</span>
               </strong>
               <span>: One minute of silence for arrival.</span>
             </h4>
             <h4>
-              <a name="agenda" class="md-header-anchor"></a>
               <strong>
                 <span>Agenda</span>
               </strong>
@@ -116,10 +105,6 @@ function Meeting() {
             <ol start="">
               <li>
                 <h5>
-                  <a
-                    name="why-am-i-here-what-am-i-expecting-from-this-meeting"
-                    class="md-header-anchor"
-                  ></a>
                   <strong>
                     <span>
                       Why am I here? What am I expecting from this meeting?
@@ -133,10 +118,6 @@ function Meeting() {
               </li>
               <li>
                 <h5>
-                  <a
-                    name="who-we-are--approximate-time-20-30-minutes"
-                    class="md-header-anchor"
-                  ></a>
                   <strong>
                     <span>Who we are. (approximate time: 20-30 minutes)</span>
                   </strong>
@@ -194,10 +175,6 @@ function Meeting() {
               </li>
               <li>
                 <h5>
-                  <a
-                    name="why-we-are-hereapproximate-time-30-minutes"
-                    class="md-header-anchor"
-                  ></a>
                   <strong>
                     <span>Why we are here.(approximate time: 30 minutes)</span>
                   </strong>
@@ -259,10 +236,6 @@ function Meeting() {
               </li>
               <li>
                 <h5>
-                  <a
-                    name="meetings--approximate-time-15-20-minutes"
-                    class="md-header-anchor"
-                  ></a>
                   <strong>
                     <span>Meetings. (approximate time: 15-20 minutes)</span>
                   </strong>
@@ -292,10 +265,6 @@ function Meeting() {
               </li>
               <li>
                 <h5>
-                  <a
-                    name="proposals-for-the-next-meeting--approximate-time-15-20-minutes"
-                    class="md-header-anchor"
-                  ></a>
                   <strong>
                     <span>Proposals for the next meeting</span>
                   </strong>
@@ -322,10 +291,6 @@ function Meeting() {
               </li>
               <li>
                 <h5>
-                  <a
-                    name="any-other-topics-questions-things-we-want-to-say"
-                    class="md-header-anchor"
-                  ></a>
                   <strong>
                     <span>
                       Any other topics, questions, things we want to say?
@@ -340,7 +305,6 @@ function Meeting() {
               </li>
             </ol>
             <h4>
-              <a name="check-out-round" class="md-header-anchor"></a>
               <span>Check-out round:</span>
             </h4>
             <p>
@@ -352,17 +316,9 @@ function Meeting() {
             <p>&nbsp;</p>
             <p>&nbsp;</p>
             <h3>
-              <a
-                name="proposals-for-the-next-meeting"
-                class="md-header-anchor"
-              ></a>
               <span>PROPOSALS FOR THE NEXT MEETING:</span>
             </h3>
             <h3>
-              <a
-                name="1-getting-to-know-each-other"
-                class="md-header-anchor"
-              ></a>
               <strong>
                 <span>1. Getting to know each other:</span>
               </strong>
@@ -394,14 +350,12 @@ function Meeting() {
               </li>
             </ul>
             <h3>
-              <a name="2-organize-our-group-step" class="md-header-anchor"></a>
               <span>2. </span>
               <strong>
                 <span>'Organize our group' STEP:</span>
               </strong>
             </h3>
             <h4>
-              <a name="0--who-is-meeting" class="md-header-anchor"></a>
               <span>0. who is meeting</span>
             </h4>
             <p>
@@ -412,7 +366,6 @@ function Meeting() {
               </span>
             </p>
             <h4>
-              <a name="1-format-of-this-meetings" class="md-header-anchor"></a>
               <span>1. format of this meetings</span>
             </h4>
             <p>
@@ -424,7 +377,6 @@ function Meeting() {
               </span>
             </p>
             <h4>
-              <a name="2-data-privacy" class="md-header-anchor"></a>
               <span>2. data privacy</span>
             </h4>
             <p>
@@ -435,7 +387,6 @@ function Meeting() {
               </span>
             </p>
             <h4>
-              <a name="3-group-organization" class="md-header-anchor"></a>
               <span>3. group organization </span>
             </h4>
             <p>
@@ -447,7 +398,6 @@ function Meeting() {
               </span>
             </p>
             <h4>
-              <a name="4-knowledge-sharing" class="md-header-anchor"></a>
               <span>4. knowledge sharing</span>
             </h4>
             <p>
@@ -459,7 +409,6 @@ function Meeting() {
               </span>
             </p>
             <h3>
-              <a name="3-knowledge-sharing" class="md-header-anchor"></a>
               <span>3. Knowledge sharing:</span>
             </h3>
             <p>

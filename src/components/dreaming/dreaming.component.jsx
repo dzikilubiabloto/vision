@@ -11,22 +11,17 @@ function Dreaming() {
           src="https://player.vimeo.com/video/227126380?color=ffffff&title=0&byline=0&portrait=0"
           width="640"
           height="360"
-          frameborder="0"
+          frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
 
-        <div class="typora-export">
-          <div id="write" class="">
+        <div className="typora-export">
+          <div id="write" className="">
             <h2>
-              <a
-                name="community---dreaming-vision"
-                class="md-header-anchor"
-              ></a>
-              <span>Community - dreaming, vision,</span>
+                <span>Community - dreaming, vision,</span>
             </h2>
             <h5>
-              <a name="sauna-lake-fire-and-garden" class="md-header-anchor"></a>
               <span>Sauna, lake, fire and garden</span>
             </h5>
             <p>
@@ -66,7 +61,6 @@ function Dreaming() {
               </span>
             </p>
             <h5>
-              <a name="pain-acceptance-space" class="md-header-anchor"></a>
               <span>Pain, acceptance, space</span>
             </h5>
             <p>
@@ -83,10 +77,6 @@ function Dreaming() {
               </span>
             </p>
             <h5>
-              <a
-                name="conflicts-confusion-connection"
-                class="md-header-anchor"
-              ></a>
               <span>Conflicts, confusion, connection</span>
             </h5>
             <p>
@@ -116,10 +106,6 @@ function Dreaming() {
               </span>
             </p>
             <h5>
-              <a
-                name="beauty-cooperation-joy-freedom"
-                class="md-header-anchor"
-              ></a>
               <span>Beauty, cooperation, joy, freedom</span>
             </h5>
             <p>
@@ -145,10 +131,6 @@ function Dreaming() {
               </span>
             </p>
             <h5>
-              <a
-                name="nature-books-neighbors-change"
-                class="md-header-anchor"
-              ></a>
               <span>Nature, books, neighbors, change</span>
             </h5>
             <p>
@@ -170,9 +152,14 @@ function Dreaming() {
                 movement? Or create a new cool lamp or book.
               </span>
             </p>
-            <div className="dreaming-picture-container"><img className="dreaming-picture" src="https://i.ibb.co/0QBmzQC/pexels-maria-orlova-4946439.jpg"></img></div>
+            <div className="dreaming-picture-container">
+              <img
+                alt="countryside road in summer"
+                className="dreaming-picture"
+                src="https://i.ibb.co/0QBmzQC/pexels-maria-orlova-4946439.jpg"
+              ></img>
+            </div>
             <h5>
-              <a name="calmness-listening-harmony" class="md-header-anchor"></a>
               <span>Calmness, listening, harmony</span>
             </h5>
             <p>
@@ -191,15 +178,11 @@ function Dreaming() {
               src="https://player.vimeo.com/video/280254239?color=579c87"
               width="640"
               height="360"
-              frameborder="0"
+              frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
             <h2>
-              <a
-                name="community---technical-things"
-                class="md-header-anchor"
-              ></a>
               <span>Community - technical things</span>
             </h2>
             <p>
@@ -266,7 +249,10 @@ function Dreaming() {
             </p>
             <p>&nbsp;</p>
             <div className="dreaming-picture-container">
-            <img src="https://images.pexels.com/photos/712876/pexels-photo-712876.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"/>
+              <img
+                src="https://images.pexels.com/photos/712876/pexels-photo-712876.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                alt="colorful wild flowers"
+              />
             </div>
           </div>
         </div>
