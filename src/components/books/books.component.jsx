@@ -108,7 +108,7 @@ function Books() {
         <img src="https://i.ibb.co/bNcZCLZ/pexels-julia-volk-527307nnn6.jpg" alt="light green gtapes or other similar fruit"/>
         <div className="books-content">
           <div className="books-title">
-            <div>Books - I can share and I read</div>
+            <div>Books - I can share and I read </div>
           </div>
 
           <div className="books-list">
