@@ -6,38 +6,80 @@ function Meeting() {
   return (
     <div className="values-container">
       <div className="values meeting">
-        <img src="https://i.ibb.co/kDHjSnn/meeting.jpg" alt="table with chairs next to big window with nature outside" />
+        {true && (
+          <img
+            src="https://i.ibb.co/SwGYkD5/m-131-web-v-1024x295.jpg"
+            alt="table with chairs next to big window with nature outside"
+          />
+        )}
+        {false && (
+          <img
+            src="https://i.ibb.co/kDHjSnn/meeting.jpg"
+            alt="table with chairs next to big window with nature outside"
+          />
+        )}
         <div className="typora-export">
           <div id="write" className="">
-            <p>
-              <span>
-                <em>
-                  <strong>Notes: </strong> I am not sure how much time the
-                  meeting will take. It depends of the amount of people. So if
-                  you think you need time to find the answer to those questions,
-                  please think about them before meeting so we will minimize
-                  thinking/waiting time.{" "}
-                </em>
-              </span>
-              <strong>
-                <span>
-                  <em>
-                    But still it is completely fine to take time to think, wait,
-                    breath, gather thoughts during the answer!
-                  </em>
-                </span>
-              </strong>
-            </p>
-            <p>
-              <span>
-                <em>
-                  Because length of the meeting depends of the amount of people,
-                  we can skip some points of agenda and move them to the next
-                  meeting so we fit in 2h. In that case I would suggest skipping
-                  points 4 and 5.{" "}
-                </em>
-              </span>
-            </p>
+            {/*// <p>
+            //   <span>
+            //     <em>
+            //       <strong>Notes: </strong> I am not sure how much time the
+            //       meeting will take. It depends of the amount of people. So if
+            //       you think you need time to find the answer to those questions,
+            //       I am sending them in advance.{" "}
+            //     </em>
+            //   </span>
+            //   <strong>
+            //     <span>
+            //       <em>
+            //         But still it is completely fine to take time to think, wait,
+            //         breath, gather thoughts during the answer!
+            //       </em>
+            //     </span>
+            //   </strong>
+            // </p>
+            // <p>
+            //   <span>
+            //     <em>
+            //       Because length of the meeting depends of the amount of people,
+            //       we can skip some points of agenda and move them to the next
+            //       meeting so we fit in 2h. In that case I would suggest skipping
+            //       points 4 and 5.{" "}
+            //     </em>
+            //   </span>
+            // </p>*/}
+            <div className='grey'>
+              <p>The meetings could serve as:</p>
+              <ul>
+                <li>
+                  <span>
+                    a <strong>connecting</strong> space where we share our stories and what
+                    is our dream;
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    {" "}
+                    <strong>learning</strong> space, where we learn more about community
+                    building;
+                  </span>
+                </li>
+                <li>
+                  <span>
+                  <strong>creativity</strong> space where we develop new ideas of what we
+                    can build together.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    {" "}
+                    place where we <strong>build</strong> something together (e.g. create
+                    vision, choose decision making process, decide how we are
+                    dealing with conflicts)
+                  </span>
+                </li>
+              </ul>
+            </div>
             <p>&nbsp;</p>
             <h4>
               <strong>
@@ -72,7 +114,7 @@ function Meeting() {
                 </em>
               </li>
             </ul>
-            <h3 >
+            <h3>
               <strong>
                 <span id="first-meeting">FIRST MEETING: </span>
               </strong>
