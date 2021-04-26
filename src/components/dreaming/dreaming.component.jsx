@@ -1,10 +1,391 @@
 import React from "react";
 
+import Visions from "../visions/visions.component";
+
 import "./dreaming.styles.scss";
+
+const visions = [
+{name: "Syeda", text: `# Quoque anum ante spemque
+
+## Huic protinus sitae
+
+Lorem markdownum vestrum pontus. Si longa haustis hospite, imbres iubes.
+
+1. Si fecundam face illic omnem male Phrixeaque
+2. Fuerat in iterum in crinale divellere viderat
+3. Prospectat contentus anteit desolatas
+4. Ipsa candidaque Troiae non virgo institerat fecit
+
+## Et sed quod viri se perfida
+
+Volucres parentes videt iuvencae. Nec unam cum praedae si candida venis illud
+fontes et heres stipite! Rediit Alcyone effugit **Inachus**! Ante dum,
+[consistere ipsum](http://www.corpusherculis.net/sine-salmacis): adhuc vocem
+ignota imagine: soror. Lacessas colle!
+
+    systemRequirements = tft_cd;
+    var retinaSimplexAnalyst = 1;
+    post_gnutella(hover_public_recursive(up_case) + platformECopy);
+    drive_fat /= classCcSkyscraper(wysiwygRegularVolume);
+    terminal_full_ddr += mediaXOffice(cropSaas.srgb(managementDimmRetina, fi) *
+            p, 500660);
+
+## Utroque in degravat
+
+Proxima ait dicitur odit agentem repercusso ille Cephenum Iason et et tenebas
+superant referunt tellus, mea ubi ipse [iactari](http://nurus.com/). Successor
+rubetis habet. Depresso et torum revocatus iacebant: ingentem post alter ille
+*vellet vestrae* inque.
+
+> Nec euntes [hunc](http://meus.com/tempora.php), est ille dilectu certe dum
+> voracis. Utilis colla edidit subiecto et miscet pudori nigrum; dedit umerique.
+> Demum usa fuerat ripae nocte apertum quem gemma, *ac guttura* posse. Consulit
+> sic pectoribusque linquit gelidi.
+
+Equorum suam Belides, metum, et praemia vocato et! Illo vel invenit et ego,
+Murmura in Phocis tot delet est opem agat. Unum torrem? Rite aut; formae puro
+lignum: Creten quae sit condas plenaque tamen, sub denique videri. Iura quoque
+decreta umeris ab fraudare pugnat positaeque mixtaeque ille carina.
+
+Demoliturque vidit unda nos iaculo erat femina extulerat plumas culpa, duram
+delatus bracchia non. Saltu arbor et scissaque adnuit: quicquam, tum, et ausa
+**expulit** fugiens atque, inpia irata? Memorabile animos inter, quae incursus
+utque nec ille ore, erit versis me soceri sileam Auroram invidiosa pede causam.
+Laertiadaeque **Elei nervos**; nec iactu creatos ter ad quas tantum Parnasos
+thyrso, haec feritatis et vivax.`},
+{name: "Fern", text: `# Captiva gestanda florilegae illi saxa gemina metuit
+
+## Placuisse funera tibique conpagibus dedere saecula corpus
+
+Lorem markdownum postquam iuves rupes quoque ventris dedisti dicentem caelo nunc
+atque remoratur **omnes**: semperque! Velocior inmoriuntur rogaberis tales, in
+animum lacrimas spectat. Quae tanto genitorque ritu subcrescit ignis, matri non
+cui, accepti.
+
+    rgbToggle += root_digital + ppl_hard(hdtv * samba, sdk +
+            acl_core_thumbnail);
+    if (koffice.ascii_wais_sata.commercial(power_interactive_ad -
+            toolbar_market, iteration, bankSkin)) {
+        raw(lamp - mysql_d_software);
+        playBar *= wordartServletSystem;
+    }
+    var dacHost = developmentWildcard;
+    if (powerpoint.dvdSearchWeb(menu_acl_virtual, mapOdbc) >= netiquetteEOdbc(
+            xmlOpengl)) {
+        editor_xp -= desktopThird + process - servicesPostscript;
+        systemWheelIp = -2;
+    } else {
+        trackball -= meta;
+        lock_veronica_correction += jsf_heap_cycle;
+    }
+    var soap_mask_jfs = 1;
+
+## Ego inanis occurrensque possem somnus nuper ventis
+
+Posse quoque, Priamidenque nostra internodia vectus, [me saxo
+semperque](http://ceciderunt.io/reddidit), tegit, manu! Famulos est vertice
+contigit nulla pariter.
+
+    carrier += serverHit(2 + chipCardWysiwyg, im_memory_soft);
+    if (monitor_method - remote / errorMacintosh) {
+        zettabyte_basic = username;
+    }
+    framework.c = copyright_graymail.logicDvdZone(
+            addressCircuit.mips.minimize_device_directx(4, 2, drag));
+    var listserv = router_iscsi(access_point * packetType);
+    if (systemKey(1 - -2, whitelistDesktopRequirements)) {
+        boot = 100;
+        point(torrent_raw.marketLaserPublic.numHddFlat(token, xhtmlDigital));
+        optical_column_volume += microcomputerCybercrimeSerial(home(
+                wiWormScrolling));
+    } else {
+        powerJumperTransfer -= facebookEndCms - 20 + hdtv;
+    }
+
+## Hactenus nec tenentibus sociis ab rebus
+
+Ab fuisse vulnere homines conlapsus Ampycides erravit dryades maxima intonuit
+rasilis, des longo [hinc](http://deushuius.io/placabitis-ut) admotum. Potius
+post: peritura Laertaque coloni me removit, quid, lac. Regnis has cum passim
+**unco** rogat, natura ambas foedantem mariti; illam huic viximus sanguine
+temerare aliqua. Norant Temesesque sis: matutinaeque sicut.
+
+    if (vlbIvr) {
+        sprite += lossy_tiger(faq_meme, domain(white_prompt));
+        progressive_cron.key(xslt_pci_ipod(xml), fios, systemX);
+        oem = samba(web);
+    } else {
+        drive += ethics_clock_time;
+        lag_video_hardware(5, reciprocal_cpm_repeater / vectorRgb,
+                hsf_scalable_cd + uml_modem_on);
+    }
+    if (sdkWi.vlb.home(mode_rj_exbibyte(webcamSoftware, point + dataFi))) {
+        power(up, rteUrl, lcdNullRgb / startRteHdv);
+        service = 17 + sip_linux(barCtrDelete);
+        constantOdbcCell.artificialCertificateRoot.ajaxBaud(boot);
+    }
+    var sync_art_software = null + windowsDragSyntax - staticSmartphone(
+            plugSystemTraceroute);
+
+Iure cervix moenibus. In haec redeuntis latus duplicataque totiens fregit, est
+corpora **una** patre vulnere tremescere dicentem quoniam aetas.
+
+Quae namque sinunt quod ascendere respicit: et et errans mecum, externum
+insidiosa. Miserere idonea, sub foedataque vitisque feram et alto. Inde ducat
+Hesperium ictu illa, arvo quam ab flumen iungere Messapiaque mea cum mendacem
+Telephon quaesita haec dedisti: materna. Munychiosque dextrum errat
+[isdem](http://adnostro.net/sum) in invecta annus vellera!`},
+{name: "Gabriella", text: `# Usque croceo et volucrumque cecidere
+
+## Addidici e vivere poenas
+
+Lorem markdownum sic sit inmensa mutua habuisse caput deteriorque domus; aquis
+infirmis, Amazone quae. Turritaque et nunc sororis, meruisse, deas nec
+**coronis** crines captatur Troiae finemque miratur; enim quae.
+
+## Corruit castrorum Minos
+
+Incubuit mea, plura invitusque albentibus; via clara ponit. Longe risere
+resistere versum locum ardentibus massa Echionides umbra incessus imperat
+furorem exigit ut fidem violentus Alcinoi. Vidisse meo, Giganteis caeli,
+convulsaque intexere an placidi sortis Cepheaque in saxa: silvis aliis in freta:
+novercae.
+
+## Nato quidquid flet Aeneas
+
+Saevi passus. Unum te, eripiat ab suaque aevum; mecum urbem et *nova* Graiumque
+o voluntas, te. Qua ferinas radix telo ingens nuda, eiectantemque solet dum,
+fontibus diduxit dives interea capillos, ira.
+
+    edutainment_client(serverSpoofingKilobit, heuristic(fi_box(
+            hyperlink_source), 2, 5));
+    modifier_drop(wordYottabyteDbms);
+    thunderboltSafeScreenshot = fatOdbc(macBittorrent + 1, nonOopBar,
+            smsInternicCron);
+    cableClipHdd += isoTopology.adapterSoftwarePlain(telnet,
+            exbibyte_rom_software - kilohertz_jpeg);
+
+## Recta non patria vides aliquid omnes
+
+Quae puer soporem boves, o, **leves**, domos peregrina de facit mandato
+nequiquam. Quirino premente pectora, tectis tollit, ubi tamen Lycum litus
+cunarum consueta.
+
+1. Illa fugit debuit umida timide cur quid
+2. Grandine fuit
+3. Nimius probatis
+
+Ulixes questaque dolore artus, quibus spectant intus nunc vultus nuper. Etiam
+intellecta fonti. Omnesque ascensu saepe ultor, simulacraque utinam at trepida
+capere.`},
+{name: "Ana", text: `# Propositique amens quaere
+
+## Guttae prunam
+
+**Lorem markdownum** bracchia dolore, cui tamen quicquam et nova tuba manibus,
+si figis turpe motu nec! Fila habetque hospite concutiuntque signa coronatae
+flammas credas laeva dixit, nunc verruntur traderet seris. Parabat classemque
+pararet videt, bracchiaque populum laetus faciem alta licet aevo sine aer ad
+fuerunt obortis Priamus, et.
+
+- Iocosa et mutentur Oriente induco
+- Curru sitim hostes suas alium fugientem
+- Nec Haemonia facit manu superum lyraeque altos
+- Intrarunt in natae fibris
+
+In *stetit* niveum quatiatur condat vidit. Materna licet, et qua metusque
+recessit solus suus **imago labor fuit** sonitum resonabat nurus ut Quid.
+
+## Est patre perdidit in longeque fortissime in
+
+Et hanc veloces colendo. Ulla luctus? Ait iungat et motus insidias, mollibus,
+boum per consulit agit humanas, et freta, ego.
+
+**Nostro** serpit in campo voce prensis; non ducebat luctuque acutior. Quoque
+diuturnior: Asterien stupri tenentem in segnior: essent regna, lingua annis axem
+foret! Versasque caede, citra pactique, duritia simul animalia orbes; haec aura
+omnia litis? Vita relinque illae at refert paenitet exclamat
+[quid](http://unam.io/turbantes.html), felix movet habuit diruerent Achaidos
+ignis auferat illum; regna. Nubila acumine at harenam natant, Thaumantea
+exhalat!
+
+- Venasque ad sive concubiturus denique coronis summam
+- Tethys collumque retinere velox vinxerat iuvat sanguine
+- Defunctum iamdudum
+- Inane nomen
+- Mecum et lacerae in ad diffusum proxima
+
+Quo per primusque inattenuata rediit fecundo et plumis satis Lacinia, **ubi**.
+Longe adspexit. Amphimedon parce sub toro fraudo: parvoque crescendo Semiramio
+magna. Et pondera prodit ipsi, coniuge choreas placet armenta memorique invenit.
+Strictique numina aversos adspice delusa, si neque *fibula tenero*.`},
+{name: "Khadija", text: `# Ista vultus ter sumit supervolat
+
+## Mea narrat oneri sideraque innixus telasque facit
+
+Lorem markdownum belli inexpugnabile neque patris, numquam infantem pectora.
+Amicas cibus alte, media animo procul, residens, ad mirabile [error
+fabula](http://www.aquarum.net/) principio. Rapta quem nudans, toris videretur
+tuentur dolores grandia vestros qui, ego Theseus terrena pendebant! Suis posita
+ab toto illum videamus sunt quod haec lurida duobus! [Suspendit
+coepti](http://datis-feres.net/dumquesumite) proditione sine guttae.
+
+1. Subibat vivosque pugnabo
+2. Erat nata ubi sit draconem librat faciebant
+3. Arduus sentit ter moenia omnibus
+4. Ante nomine mihi dura exemploque meae
+
+## Miranti lacerata inpendit oculos et vincula nepotem
+
+Esse cum viri iubebat, cum iacentem refugit, coniunx. Lyaeus addidit glaebis
+intercipit pedum; ruricolae conclamat thalami *vidit potuit patiar*.
+
+Viderat neci mea iniuria thalamique caelum, corpora quos callo volucrem. Mei nam
+solque celanda cacumen lacrimisque facit soleat adeunt bipennifer dryades nulla
+*in laudis* volanti.
+
+## Ferunt duce accipe prima forte
+
+Ore longi, habentem, maesta, premis ego, trahit leves; ait in habitus mollia.
+Vehit viri afuerunt tibi tollit est redit nostra inarata Iovi, illo. Rore
+circum.
+
+Domino vitam, **Semeleia alii ultricibus** Hectoreis quid duo bubus quamquam
+causa fronte recepto, ad iamque intonsum nexis quis. Sororum vulgus vale, nobis.
+Quamquam **dedit**, tectus quam; fas florumque ipse Iovis. Iuventam inque
+nitentes exhalantes prodet ingrediens vacuo imagine corpora propior: senior.
+Corpusque nequeo suppressis undas falsam, dilaniat neque herba aequor, tamen.
+
+Helenum perosus dare. Iura terra movet, si igne traderet necis. Sede cum dixit
+queri; tantae rerum, aliquid cura, licet.`},
+{name: "Amelia", text: `# Tantum sub obstante
+
+## Sub nullo
+
+Lorem markdownum eurus, vias torum illo, antemnas temptat, bella. Tremit fictus
+precamur in rapidas illi.
+
+    if (read_disk) {
+        boot_null_halftone(optical_mini_boot, vdsl_number, media);
+    } else {
+        cdDvr -= halfMultiplatform(protector(2));
+        mountain_state_minimize.superscalar_key_address = designControlZif;
+    }
+    if (bootRightWindows + wireless == cdn) {
+        lcd += design(5, market, processHost) + restorePpm;
+        arp(point_rich, desktop_dongle.serviceSimmStreaming.gps_storage(
+                honeypot_floppy_matrix, thyristor_drive_tebibyte,
+                boolean_login));
+    } else {
+        oem.infotainment(dpi(blob_ivr_vdsl), batch(null_kilohertz,
+                marketTargetYoutube), website);
+    }
+    alu.hitZero.key_bps_cd(cyberbullyingWord, jsp_data.powerSliLanguage(frame,
+            backbone(ipod_case)), internicSinkBalance - file(4));
+    logic_box_alu = mail_skin_malware;
+
+## Curribus patiar reddit Quo namque
+
+Hypaepis mansura, novatrix passisque tela et caput fratre in pedibusque ultro
+factaque relinquant. Gutture nec pavidamque regio nobilitate spatio
+verticibusque acta Temesesque iuvenum moveri dixerit finiat. Disiecit inmemores
+tunc iamque mecum caedis, cornibus, saeva, tutoque! Talia te artes.
+
+> Aut eget poenam, nec stat fassusque perque formosus solus, **modo tua**
+> concedant: curvataque lacertis ostendit. Spernenda venenis! Esse humanaeve
+> esse: prior concitat Terram. *Cumulum ante equi* virgineos vincet Phoebus,
+> domo vultus, innumerosque licet, aris. Dea fuisses manat: ille nunc imo;
+> persequar Pergama matris amplectens reluxit.
+
+## Pelagi mora debes suo at demissaque etiam
+
+Populator *semper* dicta, **suis** nexu tempus cervice Troiae, curvum severa
+Hesperidas, vasti, fertque pro aconita illo. Sapiente carinis descenderat deus
+Dixit eligit insurgens. Esse tam, modo nitere terras, quam in annis!
+
+    streaming += -2;
+    hashtagCompact.tutorialVariable += 4;
+    var eDdrMidi = 3;
+    var state_megabit = 67885;
+    volume(url(cpsOlapSystem - 5, dynamic * text_operation));
+
+## Nec fraterna vocavit frigore deus curis illis
+
+Pulsatus exuere voce terrarum me Midan si fugam nec caeli Alcides, ad undis et
+inpulsum cervus: amicis. Referuntur carina quae tactusque pater crimen, vero
+acuta coniunx sede parvae perque subiere mearum, haec **ipse merito** trium.
+
+Positosque subsedit tenebrasque frondentis loquax si posse, roboribusque regnum
+flava stetit: nec cum illic, signant; poena. Pedes summo [responsa probabant
+agitur](http://possentnam.com/) adspiciens, haec metuens! Nexis recessit quamque
+cerebro; **suoque ipse**! Obitumque qui in adlevat dixit, licet tota; meis velo,
+*illa quam munus*.`},
+{name: "Hazel", text: `# Memorant cohaesit rupisset nequeo tantaeque in corpore
+
+## Vera albida quae telis faveas
+
+Lorem markdownum, suorum, factique. Litatis ille qualis Telamon, fluunt hac
+felicem, humus prensamque magno corpora nescia es sum.
+
+Deosque altis, per aetatem minimum erat nostri, nec quo. Aer pressoque, plura
+quicumque in eadem, serpentibus vicibus volant intabescere: hac anni cur, et!
+
+    slashdotOem -= smm;
+    pup_map_reader = lunKibibyte;
+    if (favicon(thread) < gopherRomMtu + bankruptcy) {
+        xsltXhtmlSoap = winsockMarketCdn;
+        nosql_logic_cyberbullying.record += 12;
+    } else {
+        text = wep - view_cable;
+        exbibyte(ctp_mouse_smishing + system, wizard);
+        sata.nntp = nullNanometerKey - uriRuntimeBridge;
+    }
+    if (-1 >= ntfsProtector) {
+        partyPage.font_token(710936);
+        midi += 84;
+        compiler_syn = laptopAspIpad;
+    }
+    download_bridge_arp = cybersquatterHddFile;
+
+## Invitat tuas Clymene potitur moriensque sacrifica fateri
+
+Nitidique **tenuitque luget** mihi, trepidans visceribus: vosne vincula amomo
+simul recepta paterque ferre inmissusque. Victor ponit talibus prosit, falleret
+rimas. Inspiratque Threiciis ducere, terram tibi **Creten**, quoque quam
+potiuntur traxit marmoreoque sequuntur
+[viriles](http://laetanitenti.org/exanimesque). Notabilis [recurrunt
+senilibus](http://www.lentusfortisque.net/). Dant hectora in inque et poterat
+prope, visa nulla dedit in inde, Veneris adhuc terga.
+
+> Numen vel, calorem natura aequora silva, domino, aurae sibi: visae mihi idem.
+> Est est oscula damnosasque navita tamen natura, et tum **legem inmitem**.
+> Poteras depulerat autem: obortas felicior prior amplectitur colla: qualem
+> morisque undas; ora. Quod quae annos iustos.
+
+Petentes dedit stringitur miseram sit tamen Desine super; non cohors agrestes,
+pro victima causa, Agamemnonis. Latus scilicet terruerit monstroque prima
+nequiquam sibi finemque; *hic viri*, vati. Ferventibus faveant longius dominae
+axes perque artus: mota aere dea turbata futura exiguumque crudus. Quo alia
+inductas pedes hac, graves inferias nisi; placidos!
+
+Et vultus, quo tangit colla texit, dives, ipsa septemflua vocanti volat
+aliquemque mater, si. Quot Temesesque mea hospite nec volucres refugis angit.
+Nunc dato: quidem gravis ad aera; nec sitis coniunx: Alcithoe pariter *tenuit*
+ilia fertilis. Canam in aurumque Luna peragit si dimissis vultus.`},
+]
 
 function Dreaming() {
   return (
     <div className="values-container">
+      <Visions visions={visions} />
+    </div>
+  );
+}
+
+export default Dreaming;
+
+
+/* 
       <div className="values dreaming">
         <iframe
           title="listening"
@@ -19,7 +400,7 @@ function Dreaming() {
         <div className="typora-export">
           <div id="write" className="">
             <h2>
-                <span>Community - dreaming, vision,</span>
+              <span>Community - dreaming, vision,</span>
             </h2>
             <h5>
               <span>Sauna, lake, fire and garden</span>
@@ -60,6 +441,14 @@ function Dreaming() {
                 swimming just before the sunset, or maybe a short boat trip?
               </span>
             </p>
+            <div className="moomin characters play outside">
+              <img
+                alt="countryside road in summer"
+                className="dreaming-picture"
+                src="https://i.ibb.co/sgb9W3m/715fb34c8f8027d2e7c4c7a4938acbc2.jpg"
+              ></img>
+            </div>
+
             <h5>
               <span>Pain, acceptance, space</span>
             </h5>
@@ -105,6 +494,14 @@ function Dreaming() {
                 place of an itchy confusion arises that warm glowing sensation.
               </span>
             </p>
+            <div className="moomin characters play outside">
+              <img
+                alt="countryside road in summer"
+                className="dreaming-picture"
+                src="https://i.ibb.co/LJWDsLy/Moomin-by-Tove-Jansson.jpg"
+              ></img>
+            </div>
+
             <h5>
               <span>Beauty, cooperation, joy, freedom</span>
             </h5>
@@ -257,8 +654,4 @@ function Dreaming() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-export default Dreaming;
+*/

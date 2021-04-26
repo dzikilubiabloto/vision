@@ -1,0 +1,33 @@
+.visions-container {
+  width: 70vw;
+  margin-top: 100px;
+  .buttons-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .button-vision {
+      /*border-width: 1px 1px 1px 1px;
+      border-color: black;
+      border-style: solid;*/
+      font-size: 38px;
+      color: lightgrey;
+      font-weight: 600;
+      margin: 0 3px 0 3px;
+      padding: 10px 15px 5px 15px;
+    }
+    .button-vision:hover{
+        color: rgb(152, 190, 94);
+    }
+    .chosen {
+        /* border-bottom-color: white; */
+        color: rgb(152, 190, 94);
+    }
+    .button-vision:first-of-type{
+        margin-left: 0;
+    }
+    .button-vision:last-of-type{
+        margin-right: 0;
+    }
+  }
+}
