@@ -24,7 +24,6 @@ function Visions({ visions }) {
 
 
   useEffect(() => {
-      console.log("RENDERED")
   let visionsDict = {};
 
   let namesTemp = [];
@@ -38,35 +37,23 @@ function Visions({ visions }) {
       visionsDict["+"] = { text: "add your vision", name: "+" };
 
   
-    console.log(randomNumber);
-    console.log(visions);
-
-    console.log("[[[[iiiiiiiiiiiiiiiiiiiiiiiiiii]]]]")
-    console.log(visionsDictState)
     setNames(namesTemp);
     setVisionsDictState(visionsDict);
-    console.log(visionsDictState)
+    setCurrentVision(visions[randomNumber].name);
 
-    setCurrentVision(names[randomNumber]);
+
   }, []);
 
   const chooseVision = async (name) => {
-    console.log(name);
     await setCurrentVision(name);
     return;
   };
 
   const changeVisionField = (name, value) => {
-      console.log("VALUE")
-      console.log(value)
-      console.log(visionsDictState)
       let oldDict = { ...visionsDictState };
       oldDict[name].text = value;
       setVisionsDictState(oldDict);
-      console.log("VALUE3")
-      console.log(visionsDictState)
   }
-
 
   return (
     <div className="visions-container">
