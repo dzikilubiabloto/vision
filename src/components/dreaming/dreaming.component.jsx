@@ -374,10 +374,11 @@ Nunc dato: quidem gravis ad aera; nec sitis coniunx: Alcithoe pariter *tenuit*
 ilia fertilis. Canam in aurumque Luna peragit si dimissis vultus.`},
 ]
 
-function Dreaming() {
+function Dreaming({user}) {
+
   return (
     <div className="values-container">
-      <Visions visions={visions} />
+      <Visions visions={visions} loggedIn={typeof user !== 'undefined'}/>
     </div>
   );
 }

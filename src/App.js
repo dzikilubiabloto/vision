@@ -7,6 +7,7 @@ import "./mardown.styles.scss";
 
 import Menu from "./components/menu/menu.component";
 import Page from "./components/page/page.component";
+import AuthProvider from "./context/auth.context";
 
 function App() {
   const setPage = (page) => {
@@ -19,10 +20,12 @@ function App() {
 
   return (
     <div className="app">
-      <Router>
-        <Menu setPage={setPage} />
-        <Page chosenPage={chosenPage} />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Menu setPage={setPage} />
+          <Page chosenPage={chosenPage} />
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

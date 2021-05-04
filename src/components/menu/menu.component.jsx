@@ -1,10 +1,12 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/auth.context";
 
 import "./menu.styles.scss";
 
 function Menu() {
+  const { currentUser } = useAuth();
   return (
     <div className="menu">
       <Link to="/vision/">
@@ -16,6 +18,11 @@ function Menu() {
       <Link to="/vision/dreaming">
         <div className="link">community dreaming</div>
       </Link>
+      {currentUser && (
+        <Link to="/vision/documents">
+          <div className="link">documents</div>
+        </Link>
+      )}
       <Link to="/vision/books">
         <div className="link">books/links</div>
       </Link>

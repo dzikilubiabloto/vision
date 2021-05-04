@@ -1,11 +1,13 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import { doc, setDoc } from "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { collection, query, where, getDocs } from "firebase/firestore";
+
+import './firebase.utils';
 
 const db = firebase.firestore();
 
-const addVision = async (name, text, visible = true) => {
+export const addVision = async (name, text, visible = true) => {
   // check if vision ith this name exists
 
   // Add a new document in collection "cities"
@@ -20,6 +22,25 @@ const addVision = async (name, text, visible = true) => {
   }
 };
 
+
+
+export const saveVision = async (id, text, visible = true) => {
+  // check if vision ith this name exists
+
+  // Add a new document in collection "cities"
+  try {
+    const ref = await db.collection("visions").doc(id)
+    console.log("REF")
+    console.log(ref)
+    await updateDoc(ref, {
+      text: text
+    });
+  } catch (e) {
+    console.error("Error adding vision document: ", e);
+  }
+};
+
+
 /*
 const getVision = () => {
   // check if vision ith this name exists
@@ -28,7 +49,7 @@ const getVision = () => {
   firestore.collection("visions");
 };*/
 
-const getVisions = async () => {
+export const getVisions = async () => {
   // check if vision ith this name exists
 
   const q = query(collection(db, "visions"), where("visible", "==", true));
@@ -40,7 +61,7 @@ const getVisions = async () => {
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
       console.log(doc.id, " => ", doc.data());
-      documents.push({ id: doc.id, data: doc.data });
+      documents.push({ id: doc.id, ...doc.data() });
     });
   } catch (e) {
     console.error("Error reading vision document: ", e);
@@ -78,4 +99,3 @@ const updateVisionVisible = (visible) => {
   firestore.collection("visions").where("visible", "==", true);
 }; */
 
-module.export({ addVision, getVisions, deleteVision });

@@ -4,14 +4,21 @@ import { Switch, Route } from "react-router-dom";
 
 import Books from "../books/books.component";
 import Dreaming from "../dreaming/dreaming.component";
+import Login from "../login/login.component";
 import Meeting from "../meeting/meeting.component";
 import Values from "../values/values.component";
 import { quotes } from "../../data/console.quotes";
+import { useAuth } from "../../context/auth.context";
+import Documents from "../documents/documents.component";
 
 import "./page.styles.scss";
+import PrivateRoute from "../private-route/pirvate-route.component";
 
 function Page() {
-  console.log(
+  console.log("useAuth")
+  console.log(useAuth())
+  const { signin, currentUser, logout } = useAuth()
+;  console.log(
     "%c.",
     "display: inline-block ; background-image: url( 'https://i.pinimg.com/originals/47/d8/cf/47d8cf3127c66dc94f852b44e6a6bdc5.jpg' ) ; " +
       "background-size: cover ; padding: 10px 175px 158px 10px ; " +
@@ -19,21 +26,24 @@ function Page() {
       "font-family: monospace ;"
   );
 
-  const i = Math.floor(Math.random() * 3)
+  const i = Math.floor(Math.random() * 3);
   const [quote, author] = quotes[i];
   console.log(
-    '%c%s',
-      "font-size: 18px ; line-height: 20px ;" +
-    "font-family: 'Times New Roman' ;", quote
+    "%c%s",
+    "font-size: 18px ; line-height: 20px ;" +
+      "font-family: 'Times New Roman' ;",
+    quote
   );
   console.log(
-    '%c%s',
+    "%c%s",
     "font-size: 16px ; line-height: 18px ; " +
-    "font-family: 'Times New Roman' ;",author
-);
+      "font-family: 'Times New Roman' ;",
+    author
+  );
 
   return (
     <div>
+
       <Switch>
         <Route exact path="/vision/">
           <div className="fade-in-bottom">
@@ -43,19 +53,18 @@ function Page() {
             />
           </div>
         </Route>
-        <Route path="/vision/values">
-          <Values />
-        </Route>
-        <Route path="/vision/dreaming">
-          <Dreaming />
-        </Route>
-        <Route exact path="/vision/books">
-          <Books />
-        </Route>
-        <Route exact path="/vision/meeting">
-          <Meeting />
-        </Route>
+        <Route path="/vision/values" component={ Values} />
+        <Route path="/vision/dreaming" component={Dreaming}/>
+        <PrivateRoute path="/vision/documents" component={Documents} />
+        <Route exact path="/vision/books" component={Books} />
+        <Route exact path="/vision/meeting" component={Meeting} />
       </Switch>
+      <footer>
+      ----------
+      {JSON.stringify(currentUser)}
+      -------------
+        <Login login={signin} logout={logout} currentUser={currentUser}/>
+      </footer>
     </div>
   );
 }
