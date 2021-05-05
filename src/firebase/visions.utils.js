@@ -1,21 +1,21 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import { doc, setDoc, updateDoc } from "firebase/firestore";
+import { addDoc, updateDoc } from "firebase/firestore";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 import './firebase.utils';
 
 const db = firebase.firestore();
 
-export const addVision = async (name, text, visible = true) => {
+export const addVision = async (name, text) => {
   // check if vision ith this name exists
 
   // Add a new document in collection "cities"
   try {
-    await setDoc(doc(db, "visions"), {
+    await addDoc(collection(db, "visions"), {
       name,
       text,
-      visible,
+      visible: true
     });
   } catch (e) {
     console.error("Error adding vision document: ", e);
@@ -30,8 +30,6 @@ export const saveVision = async (id, text, visible = true) => {
   // Add a new document in collection "cities"
   try {
     const ref = await db.collection("visions").doc(id)
-    console.log("REF")
-    console.log(ref)
     await updateDoc(ref, {
       text: text
     });
@@ -60,7 +58,6 @@ export const getVisions = async () => {
   try {
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
       documents.push({ id: doc.id, ...doc.data() });
     });
   } catch (e) {
