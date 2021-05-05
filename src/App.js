@@ -1,5 +1,4 @@
 import React from "react";
-
 import { BrowserRouter as Router } from "react-router-dom";
 
 import "./App.scss";
@@ -11,9 +10,7 @@ import AuthProvider from "./context/auth.context";
 
 function App() {
   const setPage = (page) => {
-    console.log(page);
     setChosenPage(page);
-    console.log("setpage");
   };
 
   const [chosenPage, setChosenPage] = React.useState("");

@@ -19,8 +19,6 @@ function Login({login, currentUser, logout}) {
     const handleSubmit = async (event) => {
         setLoading(true)
         event.preventDefault()
-        console.log("logiiin")
-        console.log(login)
         try{
         await login(email, password)
         } catch(error){
@@ -40,9 +38,7 @@ function Login({login, currentUser, logout}) {
     }
 
     const onSubmitLogout = async () => {
-        console.log("ssss")
         await logout();
-        console.log("eeeeeeeeee")
     }
     
     return <div>

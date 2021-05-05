@@ -3,20 +3,18 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Books from "../books/books.component";
+import Documents from "../documents/documents.component";
 import Dreaming from "../dreaming/dreaming.component";
 import Login from "../login/login.component";
 import Meeting from "../meeting/meeting.component";
+import PrivateRoute from "../private-route/pirvate-route.component";
 import Values from "../values/values.component";
-import { quotes } from "../../data/console.quotes";
 import { useAuth } from "../../context/auth.context";
-import Documents from "../documents/documents.component";
+import { quotes } from "../../data/console.quotes";
 
 import "./page.styles.scss";
-import PrivateRoute from "../private-route/pirvate-route.component";
 
 function Page() {
-  console.log("useAuth")
-  console.log(useAuth())
   const { signin, currentUser, logout } = useAuth()
 ;  console.log(
     "%c.",
@@ -58,13 +56,12 @@ function Page() {
         <PrivateRoute path="/vision/documents" component={Documents} />
         <Route exact path="/vision/books" component={Books} />
         <Route exact path="/vision/meeting" component={Meeting} />
+
       </Switch>
       <footer>
-      ----------
-      {JSON.stringify(currentUser)}
-      -------------
         <Login login={signin} logout={logout} currentUser={currentUser}/>
       </footer>
+      
     </div>
   );
 }
