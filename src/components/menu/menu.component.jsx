@@ -29,6 +29,7 @@ function Menu() {
       <Link to="/vision/meeting">
         <div className="link">meeting</div>
       </Link>
+      <div className="link link-login">send message</div>
     </div>
   );
 }
