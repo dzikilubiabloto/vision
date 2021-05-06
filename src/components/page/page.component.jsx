@@ -3,6 +3,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Books from "../books/books.component";
+import Calendar from "../calendar/calendar.component";
 import Documents from "../documents/documents.component";
 import Dreaming from "../dreaming/dreaming.component";
 import Login from "../login/login.component";
@@ -54,13 +55,10 @@ function Page() {
         <Route path="/vision/values" component={ Values} />
         <Route path="/vision/dreaming" component={Dreaming}/>
         <PrivateRoute path="/vision/documents" component={Documents} />
+        <PrivateRoute path="/vision/calendar" component={Calendar} />
         <Route exact path="/vision/books" component={Books} />
         <Route exact path="/vision/meeting" component={Meeting} />
-
       </Switch>
-      <footer>
-        <Login login={signin} logout={logout} currentUser={currentUser}/>
-      </footer>
       
     </div>
   );
