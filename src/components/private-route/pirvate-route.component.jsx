@@ -1,11 +1,14 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
-import {useAuth} from '../../context/auth.context';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
+import {useAuth} from '../../context/auth.context';
+
 export default function PrivateRoute({component: Component, ...rest}) {
-    const currentUser = useAuth();
+    const {currentUser} = useAuth();
+    console.log("uuu")
+    console.log(currentUser)
     return (
-        <Route {...rest} render={props=> currentUser ? <Component {...props}/> : <Redirect to='/home/' /> } />  
+        <Route {...rest} render={props=> currentUser ? <Component {...props}/> : <Redirect to='/vision/' /> } />  
     )
 }
