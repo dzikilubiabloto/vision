@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import "./App.scss";
 import "./mardown.styles.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Menu from "./components/menu/menu.component";
 import Page from "./components/page/page.component";

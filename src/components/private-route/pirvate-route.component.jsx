@@ -6,8 +6,6 @@ import {useAuth} from '../../context/auth.context';
 
 export default function PrivateRoute({component: Component, ...rest}) {
     const {currentUser} = useAuth();
-    console.log("uuu")
-    console.log(currentUser)
     return (
         <Route {...rest} render={props=> currentUser ? <Component {...props}/> : <Redirect to='/vision/' /> } />  
     )

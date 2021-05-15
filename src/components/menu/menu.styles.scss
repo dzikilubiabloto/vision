@@ -6,24 +6,25 @@
   // font-family: "Passion One", cursive;
   font-size: 20px;
   // text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  
   justify-content: space-between;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  // padding-left: 10vw;
+  // padding-right: 10vw;
   padding-top: 2vh;
   text-decoration: none;
   font-weight: 200;
-  position: fixed;
-  height: 8vh;
+  height: 10vh;
   min-height: 50px;
-  top: 0;
-  left: 0;
-  background-color: white;
+  margin-bottom: 10px;
+  background-color: white !important;
   z-index: 500;
+  div{
+    background-color: white;
+  }
   .link {
+  background-color: white !important;
+    div {
+      padding: 1px 11px 1px 11px;
+    }
     cursor: pointer;
     &:focus,
     &:hover,
@@ -32,9 +33,22 @@
     &:active {
       text-decoration: none;
     }
+
+    &:active {
+      text-decoration: none;
+      color: coral;
+    }
+
   }
+  .nav-link:active{
+    color: darksalmon;
+  }
+  .act{
+    color: rgb(253, 143, 133) !important;
+  }
+
   .link-login{
-    color: lightgrey
+    color: lightgrey !important;
   }
   a {
     text-decoration: none;
