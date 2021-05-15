@@ -33,7 +33,10 @@ function Visions({ loggedIn }) {
   const [cookies, setCookie, removeCookie] = useCookies(['active-element']);
 
 
-  const handleClose = async () => setShow(false);
+  const handleClose = async () => {
+    await setShow(false);
+    await setShortName(false);
+  };
   const handleCloseSave = async (event) => {
     console.log("CLICKEDDDD")
     event.preventDefault();
@@ -42,6 +45,10 @@ function Visions({ loggedIn }) {
     const name = event.target[0].value;
     if (await addVisionTrigger(name)) {
       setShow(false);
+      await setCurrentVision(name);
+      await setEditing(true)
+      await setShortName(false);
+
     }
   };
   const handleShow = () => setShow(true);
@@ -78,11 +85,20 @@ function Visions({ loggedIn }) {
       setNames(namesTemp);
       setVisionsDictState(visionsDict);
       const randomNumber = Math.floor(Math.random() * visions3.length);
-      setCurrentVision(visions3[randomNumber] && visions3[randomNumber].name);
+      
+      setCurrentVision((prev) => {
+        if(prev === ''){
+          return (visions3[randomNumber] && visions3[randomNumber].name)
+         } else {
+           return prev;
+         }
+
+
+      });
       setLoadingVisions(false);
     }
     getData();
-  }, [reload]);
+  }, []);
 
   const chooseVision = async (name) => {
     await setCurrentVision(name);
@@ -117,7 +133,7 @@ function Visions({ loggedIn }) {
       return false;
     } else if (namesLower.includes(name.toLowerCase())) {
       setShortName(true);
-      setWarningMessage("Name already exist.");
+      setWarningMessage("This name already exists.");
     } else {
 
       console.log("ppppppppppp")
@@ -128,12 +144,45 @@ function Visions({ loggedIn }) {
         console.log(pass)
         await addVision(name, "", pass);
         await setName("");
-        await setReload((prev) => prev + 1);
+        // await setReload((prev) => prev + 1);
       } catch {}
 
       
       setShortName(false);
       setWarningMessage("");
+
+
+
+      setLoadingVisions(true);
+      const pass = cookies['activeElement'];
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      console.log(pass)
+      const visions3 = await getVisions(pass);
+
+      let visionsDict = {};
+
+      let namesTemp = [];
+
+      for (let vision of visions3) {
+        namesTemp.push(vision.name);
+        visionsDict[vision.name] = {
+          text: vision.text,
+          name: vision.name,
+          id: vision.id,
+        };
+      }
+
+      setNames(namesTemp);
+      setVisionsDictState(visionsDict);
+
+
+      console.log("PPPPPPPPPJJJJJJJJJJJ", name)
+      await setCurrentVision(name);
+      console.log("CCCVVVVVVVVV", currentVision)
+
+      await setEditing(true)
+      setLoadingVisions(false);
+
 
       return true;
     }
@@ -164,7 +213,7 @@ function Visions({ loggedIn }) {
         </div>
         </div>*/}
       <Row className="visions-tabs">
-        <Tabs>
+        <Tabs  activeKey={currentVision} onSelect={(key) => {console.log("iiiiiiiiiiiiiiiiipppyyyyyyy"); console.log(key); setCurrentVision(key)}}>
           {names.map((name) => (
             <Tab eventKey={name} title={name} className="visions-tab">
               <Vision

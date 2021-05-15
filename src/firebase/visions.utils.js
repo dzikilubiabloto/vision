@@ -1,7 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { addDoc, updateDoc } from "firebase/firestore";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, setDoc, doc } from "firebase/firestore";
 
 import './firebase.utils';
 
@@ -22,8 +22,15 @@ export const addVision = async (name, text, pass) => {
   const encryptedText = encryptString(text, pass);
 
   try {
-    await addDoc(collection(db, "visions"), {
-      name,
+    // await collection(db, "visions").doc(name).set( {
+    //   id: name,
+    //   name: name,
+    //   text: encryptedText,
+    //   visible: true
+    // });
+    await setDoc(doc(db, "visions", name), {
+      id: name,
+      name: name,
       text: encryptedText,
       visible: true
     });

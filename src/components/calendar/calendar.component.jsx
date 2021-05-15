@@ -11,7 +11,6 @@ export default function Calendar() {
 
   // TODO move this crypto to db utils
   const changeCalendarField = async (value) => {
-      console.log("change")
     await setCalendar({
       text: value,
       id: calendar && calendar.id,
