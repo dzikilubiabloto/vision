@@ -47,7 +47,7 @@ function Page() {
         <Route exact path="/vision/">
           <div className="fade-in-bottom">
             <img
-              src="https://i.ibb.co/mJwbmPj/barn-2594975.jpg"
+              src="https://i.ibb.co/mS7HkdC/domm4.jpg"
               alt="wwooden house in forest at night with light insode and outside, people sitting by the fire"
             />
           </div>
@@ -57,7 +57,7 @@ function Page() {
         <PrivateRoute path="/vision/documents" component={Documents} />
         <PrivateRoute path="/vision/calendar" component={Calendar} />
         <Route exact path="/vision/books" component={Books} />
-        <Route exact path="/vision/meeting" component={Meeting} />
+        <PrivateRoute exact path="/vision/meeting" component={Meeting} />
       </Switch>
       
     </div>
