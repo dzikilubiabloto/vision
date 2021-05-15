@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { useCookies } from 'react-cookie';
 
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
-import Alert from "react-bootstrap/Alert";
 
-import Login from "../login/login.component";
 import { useAuth } from "../../context/auth.context";
-import { addVision, getVisions } from "../../firebase/visions.utils";
 
 import "./menu.styles.scss";
+import ModalLogout from "../modal-logout/modal-logout.component";
+import ModalLogin from "../modal-login/modal-login.component";
 
 function Menu() {
   const { signin, currentUser, logout } = useAuth();
@@ -22,10 +21,10 @@ function Menu() {
   const [text, setText] = useState("");
   const [shortName, setShortName] = useState(false);
   const [warningMessage, setWarningMessage] = useState("");
-  const [reload, setReload] = useState(1);
-  const [names, setNames] = useState([]);
   const [showAskLogout, setShowAskLogout] = useState(false);
   const [loginLoading, setLoginLoading] = useState(false);
+  const [cookies, setCookie, removeCookie] = useCookies(['active-element']);
+
 
   const handleClose = async () => setShow(false);
   const handleCloseSave = async () => {
@@ -34,29 +33,24 @@ function Menu() {
     }
   };
   const addVisionTrigger = async () => {
-    console.log("vision trigger");
     //check  email
     if (email[9] === "@" && email[14] === "d" && email[18] === ".") {
-      console.log(name);
       const pass = name.slice(0, 10);
-
-      const passph = name.slice(10, 19);
+      const passph = 'Tymczasovehaslotestove';// name.slice(10, 19);
       // login
+      setCookie('activeElement', passph)
       try {
         setLoginLoading(true);
         await signin(email, pass);
-        console.log("curr");
-        console.log(currentUser);
         // set passph
         // TODO CHECK PASSPH
-        localStorage.setItem("activeElement", passph);
+        localStorage.setItem("activeElement", "some passphrase");
         setLoginLoading(false);
         setShow(false);
       } catch (e) {
         // error
         console.log(e);
       }
-      console.log("done!");
     } else {
       //send message
       if (email.length > 4 && name.length > 0 && text.length > 0) {
@@ -102,119 +96,180 @@ function Menu() {
   };
 
   return (
-    <div className="menu">
-      <Link to="/vision/">
-        <div className="link">home</div>
-      </Link>
-      <Link to="/vision/values">
-        <div className="link">values</div>
-      </Link>
-      <Link to="/vision/dreaming">
-        <div className="link">community dreaming</div>
-      </Link>
-      {currentUser && (
-        <Link to="/vision/documents">
-          <div className="link">documents</div>
-        </Link>
-      )}
-      {currentUser && (
-        <Link to="/vision/calendar">
-          <div className="link">calendar</div>
-        </Link>
-      )}
-      <Link to="/vision/books">
-        <div className="link">books/links</div>
-      </Link>
-      <Link to="/vision/meeting">
-        <div className="link">meeting</div>
-      </Link>
-      {!currentUser && (
-        <div className="link link-login" onClick={handleShow}>
-          send message
-        </div>
-      )}
-      {currentUser && (
-        <div className="link link-login" onClick={handleLogoutAsk}>
-          logout
-        </div>
-      )}
+    <React.Fragment>
 
-      {/*<Login login={signin} logout={logout} currentUser={currentUser} />*/}
-      <Modal animation={false} show={show} onHide={handleClose}>
-        {!loginLoading && !currentUser &&
-          <React.Fragment>
-            <Modal.Header>
-              <Modal.Title>Send us a message! :)</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <p>Email, so we can reply you.</p>
-              <InputGroup className="mb-3">
-                <InputGroup.Prepend></InputGroup.Prepend>
-                <FormControl
-                  type="email"
-                  placeholder="email"
-                  aria-label="email"
-                  aria-describedby="basic-addon1"
-                  onChange={changeEmail}
-                />
-              </InputGroup>
-              <p>Name</p>
-              <InputGroup className="mb-3">
-                <InputGroup.Prepend></InputGroup.Prepend>
-                <FormControl
-                  type="text"
-                  placeholder="name"
-                  aria-label="name"
-                  aria-describedby="basic-addon1"
-                  onChange={changeName}
-                />
-              </InputGroup>
-              <p>Message:</p>
-              <InputGroup className="mb-3">
-                <InputGroup.Prepend></InputGroup.Prepend>
-                <FormControl
-                  as="textarea"
-                  type="text"
-                  placeholder="name"
-                  aria-label="name"
-                  aria-describedby="basic-addon1"
-                  onChange={changeText}
-                />
-              </InputGroup>
-              <InputGroup className="mb-3">
-                <InputGroup.Prepend></InputGroup.Prepend>
-              </InputGroup>
-              {shortName && <Alert variant="warning">{warningMessage}</Alert>}
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Back
-              </Button>
-              <Button variant="secondary" onClick={handleCloseSave}>
-                Send message!
-              </Button>
-            </Modal.Footer>
-          </React.Fragment> }
-          {loginLoading && <img src="https://cdn.dribbble.com/users/160117/screenshots/3197970/main.gif"/>}
-          {currentUser && "Logged In!"}
-        }
-      </Modal>
 
-      <Modal animation={false} show={showAskLogout} onHide={handleCloseAsk}>
-        <Modal.Header>
-          <Modal.Title>Do you really want to log out?</Modal.Title>
-        </Modal.Header>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseAsk}>
-            Back
-          </Button>
-          <Button variant="secondary" onClick={handleLogout}>
-            Logout!
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+      <Navbar bg="light" expand="lg" fixed="top" className="menu">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            
+              <NavLink exact to="/vision/" className="link nav-link" activeClassName="act" onClick={() => {console.log("dziki")}}>
+                <div>home</div>
+              </NavLink>
+            
+
+            
+              <NavLink to="/vision/values" className="link nav-link" activeClassName="act">
+                <div>values</div>
+              </NavLink>
+            
+            
+              <NavLink to="/vision/dreaming" className="link nav-link" activeClassName="act">
+                <div>community dreaming</div>
+              </NavLink>
+            
+            {currentUser && (
+              
+                <NavLink to="/vision/documents" className="link nav-link" activeClassName="act">
+                  <div>documents</div>
+                </NavLink>
+              
+            )}
+            {currentUser && (
+              
+                <NavLink to="/vision/calendar" className="link nav-link" activeClassName="act">
+                  <div>calendar</div>
+                </NavLink>
+              
+            )}
+            
+              <NavLink to="/vision/books" className="link nav-link" activeClassName="act">
+                <div>books/links</div>
+              </NavLink>
+            
+            
+              <NavLink to="/vision/meeting" className="link nav-link" activeClassName="act">
+                <div>meeting</div>
+              </NavLink>
+            
+            {!currentUser && (
+              
+                <div className="link nav-link link-login" onClick={handleShow}>
+                  send message
+                </div>
+              
+            )}
+            {currentUser && (
+              
+                <div className="link nav-link link-login" onClick={handleLogoutAsk}>
+                  logout
+                </div>
+              
+            )}
+          </Nav>
+        </Navbar.Collapse>
+        <ModalLogin
+          show={show}
+          handleClose={handleClose}
+          loginLoading={loginLoading}
+          currentUser={currentUser}
+          changeEmail={changeEmail}
+          changeName={changeName}
+          changeText={changeText}
+          shortName={shortName}
+          warningMessage={warningMessage}
+          handleCloseSave={handleCloseSave}
+        />
+        <ModalLogout
+          showAskLogout={showAskLogout}
+          handleCloseAsk={handleCloseAsk}
+          handleLogout={handleLogout}
+        />
+      </Navbar>
+    </React.Fragment>
   );
 }
 
 export default Menu;
+
+/*
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            
+              <NavLink to="/vision/">
+                <div>home</div>
+              </NavLink>
+            
+
+            
+              <NavLink to="/vision/values">
+                <div>values</div>
+              </NavLink>
+            
+            
+              <NavLink to="/vision/dreaming">
+                <div>community dreaming</div>
+              </NavLink>
+            
+            {currentUser && (
+              
+                <NavLink to="/vision/documents">
+                  <div>documents</div>
+                </NavLink>
+              
+            )}
+            {currentUser && (
+              
+                <NavLink to="/vision/calendar">
+                  <div>calendar</div>
+                </NavLink>
+              
+            )}
+            
+              <NavLink to="/vision/books">
+                <div>books/links</div>
+              </NavLink>
+            
+            
+              <NavLink to="/vision/meeting">
+                <div>meeting</div>
+              </NavLink>
+            
+            {!currentUser && (
+              
+                <div className="link link-login" onClick={handleShow}>
+                  send message
+                </div>
+              
+            )}
+            {currentUser && (
+              
+                <div className="link link-login" onClick={handleLogoutAsk}>
+                  logout
+                </div>
+              
+            )}
+          </ul>
+        </div>
+        <ModalLogin
+          show={show}
+          handleClose={handleClose}
+          loginLoading={loginLoading}
+          currentUser={currentUser}
+          changeEmail={changeEmail}
+          changeName={changeName}
+          changeText={changeText}
+          shortName={shortName}
+          warningMessage={warningMessage}
+          handleCloseSave={handleCloseSave}
+        />
+        <ModalLogout
+          showAskLogout={showAskLogout}
+          handleCloseAsk={handleCloseAsk}
+          handleLogout={handleLogout}
+        />
+      </nav>
+      */
