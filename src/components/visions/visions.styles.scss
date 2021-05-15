@@ -1,11 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubbler+One&family=Montserrat+Alternates:wght@200&display=swap");
+
 .visions-container {
-  width: 90vw;
-  margin-top: 100px;
+  .visions-tabs {
+    color: darkgrey;
+    .nav-link {
+      
+      font-family: "Montserrat Alternates", sans-serif;
+
+      font-family: "Bubbler One", sans-serif;
+      text-transform: uppercase;
+      color: unset;
+
+
+      // color: rgb(129, 129, 125) !important;
+
+    }
+    .nav-item.active {
+      text-decoration: none;
+      color: coral;
+    }
+
+    
+    visions-tab {
+      color: black;
+    }
+  }
+
+  //m width: 90vw;
+  //m margin-top: 100px;
   .buttons-row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    //mwidth: 100%;
+    //m display: flex;
+    //mflex-direction: row;
+    //m justify-content: space-between;
     .button-vision {
       /*border-width: 1px 1px 1px 1px;
       border-color: black;
@@ -16,18 +43,18 @@
       margin: 0 3px 0 3px;
       padding: 10px 15px 5px 15px;
     }
-    .button-vision:hover{
-        color: rgb(152, 190, 94);
+    .button-vision:hover {
+      color: rgb(152, 190, 94);
     }
     .chosen {
-        /* border-bottom-color: white; */
-        color: rgb(152, 190, 94);
+      /* border-bottom-color: white; */
+      color: rgb(152, 190, 94);
     }
-    .button-vision:first-of-type{
-        margin-left: 0;
+    .button-vision:first-of-type {
+      margin-left: 0;
     }
-    .button-vision:last-of-type{
-        margin-right: 0;
+    .button-vision:last-of-type {
+      margin-right: 0;
     }
   }
 }
