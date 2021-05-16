@@ -14,7 +14,7 @@ import { saveVision } from "../../../firebase/visions.utils";
 
 import "./vision.styles.scss";
 
-function Vision({ vision, changeVisionField, editing, setEditing }) {
+function Vision({ vision, changeVisionField, editing, setEditing, setShowToastSaved }) {
   const { name, text, id } = vision || { name: "", text: "" };
   const [textV, setTextV] = React.useState("");
   const [show, setShow] = React.useState(true);
@@ -47,7 +47,12 @@ function Vision({ vision, changeVisionField, editing, setEditing }) {
     await changeVisionField(name, textV);
     const pass = cookies['activeElement'];
 
-    await saveVision(id, textV, pass);
+    try{
+      await saveVision(id, textV, pass);
+    } catch(e){
+      console.log(e)
+    }
+    await setShowToastSaved(true)
   };
 
   React.useEffect(() => {
@@ -64,6 +69,8 @@ function Vision({ vision, changeVisionField, editing, setEditing }) {
 
       await saveVision(id, textV, pass);
       await setEditing(value);
+    await setShowToastSaved(true)
+
     } else {
       await setTextV(vision && vision.text);
       await setEditing(value);
