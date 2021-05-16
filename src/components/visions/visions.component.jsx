@@ -3,12 +3,13 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
-import Form from 'react-bootstrap/Form'
+import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import { useCookies } from 'react-cookie';
-
+import { useCookies } from "react-cookie";
+import Toast from "react-bootstrap/Toast";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { addVision, getVisions } from "../../firebase/visions.utils";
 
@@ -30,25 +31,25 @@ function Visions({ loggedIn }) {
   const [lastVisitedName, setLastVisitedName] = useState("");
   const [lastVisitedText, setLastVisitedText] = useState("");
   const [nameForm, setNameForm] = useState("");
-  const [cookies, setCookie, removeCookie] = useCookies(['active-element']);
-
+  const [cookies, setCookie, removeCookie] = useCookies(["active-element"]);
+  const [showToastSaved, setShowToastSaved] = useState(false);
 
   const handleClose = async () => {
     await setShow(false);
     await setShortName(false);
   };
   const handleCloseSave = async (event) => {
-    console.log("CLICKEDDDD")
+    console.log("CLICKEDDDD");
     event.preventDefault();
     console.log("GGGGGGGGGGGGGGGGGGGGG");
     console.log(event.target[0].value);
     const name = event.target[0].value;
     if (await addVisionTrigger(name)) {
+
       setShow(false);
       await setCurrentVision(name);
-      await setEditing(true)
+      await setEditing(true);
       await setShortName(false);
-
     }
   };
   const handleShow = () => setShow(true);
@@ -64,9 +65,9 @@ function Visions({ loggedIn }) {
     // probably they could come from parent component but novv I vvill keep them here
     async function getData() {
       setLoadingVisions(true);
-      const pass = cookies['activeElement'];
+      const pass = cookies["activeElement"];
       console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-      console.log(pass)
+      console.log(pass);
       const visions3 = await getVisions(pass);
 
       let visionsDict = {};
@@ -85,15 +86,13 @@ function Visions({ loggedIn }) {
       setNames(namesTemp);
       setVisionsDictState(visionsDict);
       const randomNumber = Math.floor(Math.random() * visions3.length);
-      
+
       setCurrentVision((prev) => {
-        if(prev === ''){
-          return (visions3[randomNumber] && visions3[randomNumber].name)
-         } else {
-           return prev;
-         }
-
-
+        if (prev === "") {
+          return visions3[randomNumber] && visions3[randomNumber].name;
+        } else {
+          return prev;
+        }
       });
       setLoadingVisions(false);
     }
@@ -123,40 +122,38 @@ function Visions({ loggedIn }) {
 
   const addVisionTrigger = async (name) => {
     await setName(name ? name.replace(/\s/g, "") : "");
-    console.log("replaced name", name)
+    console.log("replaced name", name);
     const namesLower = names.map((name) => name.toLowerCase());
-    console.log("name loer", namesLower)
+    console.log("name loer", namesLower);
     if (name.length < 2 || name.length > 10) {
       console.log("too short");
       setShortName(true);
-      setWarningMessage("Profile name should be at least two characters long.");
+      setWarningMessage("Profile name should be 2-10 characters long.");
       return false;
+    } else if (!name.match("^[A-Za-z0-9]+$")) {
+      setWarningMessage("Just letters and numbers.");
     } else if (namesLower.includes(name.toLowerCase())) {
       setShortName(true);
       setWarningMessage("This name already exists.");
     } else {
-
-      console.log("ppppppppppp")
+      console.log("ppppppppppp");
       // add to db
       try {
-        const pass = cookies['activeElement'];
-        console.log("SUPER COOOOOOOOOOOOKIE")
-        console.log(pass)
+        const pass = cookies["activeElement"];
+        console.log("SUPER COOOOOOOOOOOOKIE");
+        console.log(pass);
         await addVision(name, "", pass);
         await setName("");
         // await setReload((prev) => prev + 1);
       } catch {}
 
-      
       setShortName(false);
       setWarningMessage("");
 
-
-
       setLoadingVisions(true);
-      const pass = cookies['activeElement'];
+      const pass = cookies["activeElement"];
       console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-      console.log(pass)
+      console.log(pass);
       const visions3 = await getVisions(pass);
 
       let visionsDict = {};
@@ -175,14 +172,12 @@ function Visions({ loggedIn }) {
       setNames(namesTemp);
       setVisionsDictState(visionsDict);
 
-
-      console.log("PPPPPPPPPJJJJJJJJJJJ", name)
+      console.log("PPPPPPPPPJJJJJJJJJJJ", name);
       await setCurrentVision(name);
-      console.log("CCCVVVVVVVVV", currentVision)
+      console.log("CCCVVVVVVVVV", currentVision);
 
-      await setEditing(true)
+      await setEditing(true);
       setLoadingVisions(false);
-
 
       return true;
     }
@@ -213,9 +208,27 @@ function Visions({ loggedIn }) {
         </div>
         </div>*/}
       <Row className="visions-tabs">
-        <Tabs  activeKey={currentVision} onSelect={(key) => {console.log("iiiiiiiiiiiiiiiiipppyyyyyyy"); console.log(key); setCurrentVision(key)}}>
+        <Tabs
+          activeKey={currentVision}
+          onSelect={(key) => {
+            console.log("iiiiiiiiiiiiiiiiipppyyyyyyy");
+            console.log(key);
+            setCurrentVision(key);
+            setEditing(false);
+          }}
+        >
           {names.map((name) => (
             <Tab eventKey={name} title={name} className="visions-tab">
+              <Toast
+                onClose={() => setShowToastSaved(false)}
+                show={showToastSaved}
+                delay={1000}
+                autohide
+              >
+                <Toast.Body>
+                  Profile saved!
+                </Toast.Body>
+              </Toast>
               <Vision
                 vision={visionsDictState[name]}
                 changeVisionField={changeVisionField}
@@ -224,6 +237,8 @@ function Visions({ loggedIn }) {
                 editing={editing}
                 setLastVisitedName={setLastVisitedName}
                 setLastVisitedText={setLastVisitedText}
+                setShowToastSaved={setShowToastSaved}
+
               />
             </Tab>
           ))}
@@ -268,7 +283,9 @@ function Visions({ loggedIn }) {
             </p>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" type="submit">Create profile</Button>
+            <Button variant="secondary" type="submit">
+              Create profile
+            </Button>
           </Modal.Footer>
         </Form>
         <Button variant="secondary" onClick={handleClose}>
