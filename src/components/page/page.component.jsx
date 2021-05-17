@@ -53,11 +53,11 @@ function Page() {
           </div>
         </Route>
         <Route path="/vision/values" component={ Values} />
-        <PrivateRoute path="/vision/dreaming" component={Dreaming}/>
+        <Route path="/vision/dreaming" component={Dreaming}/>
         <PrivateRoute path="/vision/documents" component={Documents} />
         <PrivateRoute path="/vision/calendar" component={Calendar} />
         <Route exact path="/vision/books" component={Books} />
-        <PrivateRoute exact path="/vision/meeting" component={Meeting} />
+        <Route exact path="/vision/meeting" component={Meeting} />
       </Switch>
       
     </div>
