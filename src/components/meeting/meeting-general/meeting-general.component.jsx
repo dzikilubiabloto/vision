@@ -3,7 +3,7 @@ import React from 'react'
 export default function MeetingGeneral() {
     return (
         <div className="grey meeting-tab-content">
-        <p>The meetings could serve as:</p>
+        <p>The meetings serve as:</p>
         <ul>
           <li>
             <span>
@@ -27,9 +27,9 @@ export default function MeetingGeneral() {
           <li>
             <span>
               {" "}
-              place where we <strong>build</strong> something together
+              place where we <strong>are building</strong> something together
               (e.g. create vision, choose decision making process,
-              decide how we are dealing with conflicts)
+              deciding how we are dealing with conflicts)
             </span>
           </li>
         </ul>
