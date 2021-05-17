@@ -14,6 +14,7 @@ const books = [
     types: "I can share EBOOK and AUDIOBOOK",
     description:
       "Book provides practical information on how to build a community. Written by an editor of 'Communities' magazine",
+    downloads: [{title: 'epub', link: 'http://31.42.184.140/main/2568000/e722eb22ba7df39d2fcc826b521bb356/Adams%2C%20Patch%2C%20Christian%2C%20Diana%20Leafe%20-%20Creating%20a%20Life%20Together-New%20Society%20Publishers%20%282010%29.epub'}, {title: 'pdf', link:'file:///tmp/mozilla_dzik0/Diana%20Leafe%20Christian%20-%20Creating%20a%20Life%20Together_%20Practical%20Tools%20to%20Grow%20Ecovillages%20and%20Intentional%20Communities%20(2003).pdf'}]
   },
   {
     image: "https://i.ibb.co/vmHgZjJ/51-Khd-Qn-Mtw-L-SX382-BO1-204-203-200.jpg",
@@ -24,6 +25,7 @@ const books = [
     types: "I can share EBOOK",
     description:
       "Articles - tips on topics of building community and living in a community. Less practical (building, money, land) and focused on connections, feelings. Articles by different authors.",
+      downloads: [{title: 'pdf', link: 'file:///tmp/mozilla_dzik0/Kosha%20Anja%20Joubert,%20Robin%20Alfred%20-%20Beyond%20You%20and%20Me_%20Inspiration%20and%20Wisdom%20for%20Community%20Building-Permanent%20Publications%20(2007).pdf'}],
   },
   {
     image: "https://i.ibb.co/QD2rcbg/download.jpg",
