@@ -18,7 +18,7 @@ import "./visions.styles.scss";
 import Vision from "./vision/vision.component";
 import { Container, Row, Col } from "react-bootstrap";
 
-function Visions({ loggedIn }) {
+function Visions() {
   const [currentVision, setCurrentVision] = useState("");
   const [visionsDictState, setVisionsDictState] = useState({});
   const [names, setNames] = useState([]);
@@ -232,7 +232,6 @@ function Visions({ loggedIn }) {
               <Vision
                 vision={visionsDictState[name]}
                 changeVisionField={changeVisionField}
-                loggedIn={loggedIn}
                 setEditing={setEditing}
                 editing={editing}
                 setLastVisitedName={setLastVisitedName}
