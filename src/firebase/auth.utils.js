@@ -13,7 +13,7 @@ export const login = async (email, password) => {
         return user;
         // ...
       })
-      .catch((error) => {
+      .catch(() => {
         // TODO
         return false;
       });

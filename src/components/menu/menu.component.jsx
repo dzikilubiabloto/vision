@@ -16,7 +16,6 @@ function Menu() {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [text, setText] = useState("");
   const [showAskLogout, setShowAskLogout] = useState(false);
   const [loginLoading, setLoginLoading] = useState(false);
   const [, setCookie] = useCookies(["active-element"]);
@@ -80,9 +79,6 @@ function Menu() {
   };
   const changeName = (event) => {
     setName(event.target.value);
-  };
-  const changeText = (event) => {
-    setText(event.target.value);
   };
 
   return (
@@ -173,7 +169,6 @@ function Menu() {
           currentUser={currentUser}
           changeEmail={changeEmail}
           changeName={changeName}
-          changeText={changeText}
           handleCloseSave={handleCloseSave}
         />
         <ModalLogout

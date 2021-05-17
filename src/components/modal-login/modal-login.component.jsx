@@ -78,7 +78,7 @@ export default function ModalLogin({
           src="https://cdn.dribbble.com/users/160117/screenshots/3197970/main.gif"
         />
       )}
-      {currentUser && "Logged In!"}}
+      {currentUser && "Logged In!"}
     </Modal>
   );
 }

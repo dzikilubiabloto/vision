@@ -84,10 +84,9 @@ function DocumentsData({ document, changeDocumentField }) {
           <div
             className={"vision-markdown" + (!editing ? " editing-markdon" : "")}
           >
-            <ReactMarkdown
-              remarkPlugins={[gfm]}
-              children={text.replace(re, "")}
-            ></ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[gfm]}>
+              {text.replace(re, "")}
+            </ReactMarkdown>
           </div>
         </Col>
       </Row>

@@ -133,8 +133,8 @@ function Books() {
           </div>
 
           <div className="books-list">
-            {books.map((book) => (
-              <Book book={book} />
+            {books.map((book, i) => (
+              <Book book={book} key={i}/>
             ))}
           </div>
           <div className="books-title">
@@ -144,8 +144,8 @@ function Books() {
           </div>
 
           <div className="books-list">
-            {books2.map((book) => (
-              <Book book={book} />
+            {books2.map((book, i) => (
+              <Book book={book} key={i}/>
             ))}
           </div>
           <div className="books-title">

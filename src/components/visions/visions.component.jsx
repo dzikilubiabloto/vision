@@ -107,7 +107,9 @@ function Visions() {
         const pass = cookies["activeElement"];
         await addVision(name, "", pass);
         // await setReload((prev) => prev + 1);
-      } catch {}
+      } catch {
+        return;
+      }
 
       setShortName(false);
       setWarningMessage("");
@@ -170,7 +172,12 @@ function Visions() {
           }}
         >
           {names.map((name) => (
-            <Tab eventKey={name} title={name} className="visions-tab">
+            <Tab
+              eventKey={name}
+              title={name}
+              className="visions-tab"
+              key={name}
+            >
               <Toast
                 onClose={() => setShowToastSaved(false)}
                 show={showToastSaved}

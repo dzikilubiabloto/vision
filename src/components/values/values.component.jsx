@@ -64,7 +64,7 @@ function Values() {
                 Place where the spirit of <strong>unschooling</strong> is
                 present in giving <strong>freedom</strong> of learning to
                 children and encouraging it in adults. Place which is connected
-                with the "outside", non community world by being a space that
+                with the &quot;outside&quot;, non community world by being a space that
                 encourages <strong>new communities to form</strong> (by sharing
                 knowledge or being the first of the new network of communities).
                 That would be also a place where ideas grow, projects are built

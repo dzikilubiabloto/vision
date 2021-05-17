@@ -76,7 +76,11 @@ export default function MeetingMinutes() {
   return (
     <div>
       {previousMinutes.map(({ number, facilitator, date, short }) => (
-        <Row className="minutes-block" onClick={() => openMinutes(number)}>
+        <Row
+          className="minutes-block"
+          key={number}
+          onClick={() => openMinutes(number)}
+        >
           <Col lg={1}></Col>
           <Col lg={10}>
             <div className="title-row">
@@ -105,17 +109,14 @@ export default function MeetingMinutes() {
                 </div>
               </Col>
               <Col lg={8}>
-                <ReactMarkdown
-                  remarkPlugins={[gfm]}
-                  children={
+                <ReactMarkdown remarkPlugins={[gfm]}>
+                  {previousMinutes.filter(
+                    (m) => m.number === currentMinutes
+                  )[0] &&
                     previousMinutes.filter(
                       (m) => m.number === currentMinutes
-                    )[0] &&
-                    previousMinutes.filter(
-                      (m) => m.number === currentMinutes
-                    )[0].text
-                  }
-                ></ReactMarkdown>
+                    )[0].text}
+                </ReactMarkdown>
               </Col>
               <Col lg={2}>
                 <div className="arrow-button" onClick={nextMinutes}>

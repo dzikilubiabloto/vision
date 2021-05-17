@@ -12,10 +12,12 @@ import "../firebase/firebase.utils";
 const AuthContext = createContext();
 const auth = getAuth();
 
+
 export function useAuth() {
   return useContext(AuthContext);
 }
 
+// eslint-disable-next-line react/prop-types
 export default function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
@@ -26,24 +28,21 @@ export default function AuthProvider({ children }) {
   };
 
   function signin(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password)
   }
 
-  function logout(email, password) {
-    return signOut(auth);
+  function logout() {
+      return signOut(auth);
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth,  (user) => {
       setCurrentUser(user);
       setLoading(false);
+
     });
     return unsubscribe;
   }, []);
 
-  return (
-    <AuthContext.Provider value={value}>
-      {!loading && children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
 }

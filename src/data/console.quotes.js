@@ -32,4 +32,4 @@ who need lines on their writing paper, or who always squeeze up from the bottom 
   ["", ""],
 ];
 
-module.exports = { quotes };
+export default { quotes };

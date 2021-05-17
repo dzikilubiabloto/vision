@@ -125,8 +125,7 @@ export default function MeetingAgenda({ previousMinutes }) {
           .includes(Number(number)) && (
           <ReactMarkdown
             remarkPlugins={[gfm]}
-            children={agenda}
-          ></ReactMarkdown>
+          >{agenda}</ReactMarkdown>
         )}
         <div>
           <Button onClick={handleShowAdd}>Add minutes</Button>

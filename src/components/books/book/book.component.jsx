@@ -20,8 +20,8 @@ function Book({ book }) {
           <div className="author">{author}</div>
           {currentUser &&
             downloads &&
-            downloads.map(({ title, link }) => (
-              <div className="link">
+            downloads.map(({ title, link }, i) => (
+              <div className="link" key={i}>
                 {title}
                 {": "}
                 <a href={link}>link</a>

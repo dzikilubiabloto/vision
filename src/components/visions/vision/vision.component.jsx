@@ -46,7 +46,6 @@ function Vision({
   const { currentUser } = useAuth();
 
   const save = async () => {
-    const passPh = localStorage.getItem("activeElement");
     await changeVisionField(name, textV);
     const pass = cookies["activeElement"];
 
@@ -174,8 +173,7 @@ function Vision({
           >
             <ReactMarkdown
               remarkPlugins={[gfm]}
-              children={textV}
-            ></ReactMarkdown>
+            >textV</ReactMarkdown>
           </div>
         </Col>
       </Row>
