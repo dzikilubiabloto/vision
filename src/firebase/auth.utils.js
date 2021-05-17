@@ -14,9 +14,10 @@ export const login = async (email, password) => {
         // ...
       })
       .catch((error) => {
-        console.log(error);
+        // TODO
+        return false;
       });
   } catch (error) {
-    console.log(error);
+    return false;
   }
 };

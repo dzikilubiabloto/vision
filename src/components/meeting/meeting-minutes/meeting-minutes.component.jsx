@@ -10,12 +10,12 @@ import { useCookies } from "react-cookie";
 import ReactMarkdown from "react-markdown";
 
 import gfm from "remark-gfm";
-import { getMinutes,  } from "../../../firebase/meetings.utils";
+import { getMinutes } from "../../../firebase/meetings.utils";
 
 export default function MeetingMinutes() {
   const [minutesModal, setMinutesModal] = React.useState();
   const [currentMinutes, setCurrentMinutes] = React.useState(1);
-  const [cookies, , ] = useCookies(["active-element"]);
+  const [cookies, ,] = useCookies(["active-element"]);
 
   const [previousMinutes, setPreviousMinutes] = React.useState([]);
 
@@ -26,31 +26,13 @@ export default function MeetingMinutes() {
       try {
         // get meeting minutes array
         const minutesD = await getMinutes(pass);
-        console.log(minutesD);
-        console.log(typeof minutesD);
-        console.log("KKKKKKKKK8888KKKKKKKKKKKKKKKKk");
-        for (const m of minutesD) {
-          console.log("pp");
-          console.log(m);
-          console.log(m.number);
-          console.log(Number(m.number));
-        }
-        console.log("KKKKKKKKKKKKKKKKKKKKKKKKKk");
 
         // sort from neest to oldest
-        console.log(
-          minutesD.sort((a, b) => Number(a.number) - Number(b.number))
-        );
-        console.log(
-          minutesD.sort((a, b) => Number(b.number) - Number(a.number))
-        );
 
-        console.log(Number(4));
-        console.log(Number("4"));
-        console.log(Number(4) === Number("4"));
         await setPreviousMinutes(minutesD);
       } catch (e) {
-        console.log(e);
+        // TODO
+        setPreviousMinutes([]);
       }
     };
     getData();
@@ -67,13 +49,8 @@ export default function MeetingMinutes() {
   const prevMinutes = () => {
     setCurrentMinutes((prev) => {
       // check prev minutes
-      console.log("OOOOOO");
-      console.log(previousMinutes);
       const minutesNumbers = previousMinutes.map((m) => m.number);
-      console.log(minutesNumbers);
       for (let i = prev - 1; i > 0; i--) {
-        console.log(i);
-        console.log(minutesNumbers.includes(i));
         if (minutesNumbers.includes(i)) {
           return i;
         }

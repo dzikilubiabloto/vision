@@ -31,7 +31,7 @@ function Meeting() {
         minutesD.sort((a, b) => b.number - a.number);
         await setPreviousMinutes(minutesD);
       } catch (e) {
-        console.log(e);
+        await setPreviousMinutes([]);
       }
     };
     getData();

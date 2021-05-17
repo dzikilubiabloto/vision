@@ -6,7 +6,7 @@ import { useAuth } from "../../context/auth.context";
 import "./dreaming.styles.scss";
 
 function Dreaming() {
-const { currentUser } = useAuth();
+  const { currentUser } = useAuth();
 
   return (
     <div className="values-container">

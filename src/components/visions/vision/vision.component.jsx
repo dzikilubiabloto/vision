@@ -47,15 +47,14 @@ function Vision({
 
   const save = async () => {
     const passPh = localStorage.getItem("activeElement");
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    console.log(passPh);
     await changeVisionField(name, textV);
     const pass = cookies["activeElement"];
 
     try {
       await saveVision(id, textV, pass);
     } catch (e) {
-      console.log(e);
+      // TODO 
+      setShowToastSaved(false)
     }
     await setShowToastSaved(true);
   };
@@ -66,9 +65,6 @@ function Vision({
 
   const toggleEditing = async (value, save) => {
     if (!value && save) {
-      console.log("sejv");
-      console.log(name);
-      console.log(textV);
       await changeVisionField(name, textV);
       const pass = cookies["activeElement"];
 

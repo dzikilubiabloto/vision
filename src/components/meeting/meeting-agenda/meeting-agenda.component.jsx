@@ -83,10 +83,7 @@ export default function MeetingAgenda({ previousMinutes }) {
 
         // get meeting minutes array
         const pass = cookies["activeElement"];
-        console.log(pass);
         const minutesD = await getMinutes(pass);
-        console.log("DDDDDDDDDDDDDDDd");
-        console.log(minutesD);
         // sort from neest to oldest
         minutesD.sort((a, b) => b.number - a.number);
 
@@ -96,7 +93,9 @@ export default function MeetingAgenda({ previousMinutes }) {
         const num = Number(await agenda.slice(i, i + 1));
         await setNumber(num);
       } catch (e) {
-        console.log(e);
+          // TODO 
+        setAgenda('')
+        setNumber()
       }
     };
     getData();

@@ -67,7 +67,6 @@ export const getVisions = async (pass) => {
 
   try {
     querySnapshot.forEach(async (doc) => {
-      console.log(doc);
       // doc.data() is never undefined for query doc snapshots
       documents.push({
         id: doc.id,
@@ -79,6 +78,5 @@ export const getVisions = async (pass) => {
     console.error("Error reading vision document: ", e);
   }
 
-  console.log(documents);
   return documents;
 };

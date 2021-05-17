@@ -90,7 +90,6 @@ export const getMinutes = async (pass) => {
   try {
     await querySnapshot.forEach(async (doc) => {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc);
       documents.push({
         ...doc.data(),
         id: doc.id,
@@ -104,21 +103,6 @@ export const getMinutes = async (pass) => {
   } catch (e) {
     console.error("Error reading vision document: ", e);
   }
-  console.log("utils");
-  console.log(documents);
-  console.log(typeof documents);
-  for (let m in documents) {
-    console.log("pp3");
-    console.log(m);
-  }
-  console.log("utils end");
 
-  const gg = ["m", "n", "o", "p", "q", "r"];
-  console.log("GGGGGGGGGGGGGGG");
-  console.log(gg);
-  for (const m in gg) {
-    console.log("pp3");
-    console.log(m);
-  }
   return documents;
 };

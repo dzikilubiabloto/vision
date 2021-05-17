@@ -44,22 +44,17 @@ function Menu() {
         setShow(false);
       } catch (e) {
         // error
-        console.log(e);
+        // TODO
+        return false;
       }
     } else {
       //send message
-      if (email.length > 4 && name.length > 0 && text.length > 0) {
-        saveMessage(email, name, text);
-      }
+      // TODO saving message
+      return false
     }
     return true;
   };
 
-  const saveMessage = (email, name, text) => {
-    console.log(email);
-    console.log(name);
-    console.log(text);
-  };
   const handleShow = () => setShow(true);
 
   const handleLogoutConfirm = () => {
@@ -101,9 +96,6 @@ function Menu() {
               to="/vision/"
               className="link nav-link"
               activeClassName="act"
-              onClick={() => {
-                console.log("dziki");
-              }}
             >
               <div>home</div>
             </NavLink>
