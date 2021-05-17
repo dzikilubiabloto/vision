@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Tabs from "react-bootstrap/Tabs";
@@ -24,14 +22,11 @@ function Visions() {
   const [names, setNames] = useState([]);
   const [show, setShow] = useState(false);
   const [shortName, setShortName] = useState(false);
-  const [name, setName] = useState(false);
-  const [reload, setReload] = useState(1);
   const [warningMessage, setWarningMessage] = useState("");
   const [loadingVisions, setLoadingVisions] = useState(false);
   const [lastVisitedName, setLastVisitedName] = useState("");
   const [lastVisitedText, setLastVisitedText] = useState("");
-  const [nameForm, setNameForm] = useState("");
-  const [cookies, setCookie, removeCookie] = useCookies(["active-element"]);
+  const [cookies, ,] = useCookies(["active-element"]);
   const [showToastSaved, setShowToastSaved] = useState(false);
 
   const handleClose = async () => {
@@ -45,7 +40,6 @@ function Visions() {
     console.log(event.target[0].value);
     const name = event.target[0].value;
     if (await addVisionTrigger(name)) {
-
       setShow(false);
       await setCurrentVision(name);
       await setEditing(true);
@@ -55,11 +49,6 @@ function Visions() {
   const handleShow = () => setShow(true);
   const [editing, setEditing] = useState(false);
   const [saveModal, setSaveModal] = useState(false);
-
-  /* for (let i = names.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [names[i], names[j]] = [names[j], names[i]];
-  } */
 
   useEffect(() => {
     // probably they could come from parent component but novv I vvill keep them here
@@ -99,12 +88,6 @@ function Visions() {
     getData();
   }, []);
 
-  const chooseVision = async (name) => {
-    await setCurrentVision(name);
-    setEditing(false);
-    return;
-  };
-
   const changeVisionField = (name, value) => {
     console.log("in change visiong field");
     setVisionsDictState((oldDict) => {
@@ -121,7 +104,6 @@ function Visions() {
   };
 
   const addVisionTrigger = async (name) => {
-    await setName(name ? name.replace(/\s/g, "") : "");
     console.log("replaced name", name);
     const namesLower = names.map((name) => name.toLowerCase());
     console.log("name loer", namesLower);
@@ -143,7 +125,6 @@ function Visions() {
         console.log("SUPER COOOOOOOOOOOOKIE");
         console.log(pass);
         await addVision(name, "", pass);
-        await setName("");
         // await setReload((prev) => prev + 1);
       } catch {}
 
@@ -181,10 +162,6 @@ function Visions() {
 
       return true;
     }
-  };
-
-  const changeName = async (event) => {
-    await setNameForm(event.target.value);
   };
 
   return (
@@ -225,9 +202,7 @@ function Visions() {
                 delay={1000}
                 autohide
               >
-                <Toast.Body>
-                  Profile saved!
-                </Toast.Body>
+                <Toast.Body>Profile saved!</Toast.Body>
               </Toast>
               <Vision
                 vision={visionsDictState[name]}
@@ -237,7 +212,6 @@ function Visions() {
                 setLastVisitedName={setLastVisitedName}
                 setLastVisitedText={setLastVisitedText}
                 setShowToastSaved={setShowToastSaved}
-
               />
             </Tab>
           ))}

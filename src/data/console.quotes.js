@@ -6,7 +6,10 @@ who need lines on their writing paper, or who always squeeze up from the bottom 
     "Julio Cortazar, Hopscotch",
   ],
   ["Memory is a mirror that scandalously lies.", "Julio Cortazar"],
-  ["All profound distraction opens certain doors. You have to allow yourself to be distracted when you are unable to concentrate.", "Julio Cortazar"],
+  [
+    "All profound distraction opens certain doors. You have to allow yourself to be distracted when you are unable to concentrate.",
+    "Julio Cortazar",
+  ],
   ["", ""],
   ["", ""],
   ["", ""],

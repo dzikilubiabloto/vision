@@ -7,13 +7,12 @@ export default function Calendar() {
   const [calendar, setCalendar] = React.useState({ text: "", id: "" });
   const [cookies, ,] = useCookies(["active-element"]);
 
-
   // TODO move this crypto to db utils
   const changeCalendarField = async (value) => {
     await setCalendar({
       text: value,
       id: calendar && calendar.id,
-   });
+    });
   };
 
   React.useEffect(() => {

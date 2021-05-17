@@ -18,7 +18,7 @@ export default function MeetingAgenda({ previousMinutes }) {
   const [date, setDate] = React.useState("14/04/1999");
   const [short, setShort] = React.useState("");
   const [showAddModal, setShowAddModal] = React.useState(false);
-  const [cookies, setCookie, removeCookie] = useCookies(["active-element"]);
+  const [cookies, , ] = useCookies(["active-element"]);
 
   const handleCloseAdd = () => {
     setShowAddModal(false);
@@ -26,7 +26,6 @@ export default function MeetingAgenda({ previousMinutes }) {
 
   const handleShowAdd = () => {
     const re = /<!--((.|[\n|\r|\r\n])*?)-->[\n|\r|\r\n]?(\s+)?/g;
-    const pass = cookies["activeElement"];
 
     const resultForData = agenda.slice(0, 1000);
     // find number
@@ -48,7 +47,6 @@ export default function MeetingAgenda({ previousMinutes }) {
     j = resultForData.indexOf(datePost);
     let dateTemp = resultForData.slice(i, j - 1);
     dateTemp = dateTemp.replace(re, "");
-    const ooo = "))))--" + dateTemp + "--((((";
     setDate(dateTemp); // dateTemp);
     setShowAddModal(true);
   };
@@ -66,7 +64,7 @@ export default function MeetingAgenda({ previousMinutes }) {
       console.log("cos znó nie tak dzikuuu");
       return;
     }
-    await saveMinutes({number, facilitator, date, short, text:agenda}, pass);
+    await saveMinutes({ number, facilitator, date, short, text: agenda }, pass);
     setShowAddModal(false);
   };
 
@@ -84,11 +82,11 @@ export default function MeetingAgenda({ previousMinutes }) {
         await setAgenda(result);
 
         // get meeting minutes array
-      const pass = cookies["activeElement"];
-console.log(pass)
+        const pass = cookies["activeElement"];
+        console.log(pass);
         const minutesD = await getMinutes(pass);
-        console.log("DDDDDDDDDDDDDDDd")
-        console.log(minutesD)
+        console.log("DDDDDDDDDDDDDDDd");
+        console.log(minutesD);
         // sort from neest to oldest
         minutesD.sort((a, b) => b.number - a.number);
 

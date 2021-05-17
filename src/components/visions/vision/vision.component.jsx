@@ -7,19 +7,24 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import gfm from "remark-gfm";
 import Alert from "react-bootstrap/Alert";
-import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
 
 import { useAuth } from "../../../context/auth.context";
 import { saveVision } from "../../../firebase/visions.utils";
 
 import "./vision.styles.scss";
 
-function Vision({ vision, changeVisionField, editing, setEditing, setShowToastSaved }) {
-  const { name, text, id } = vision || { name: "", text: "" };
+function Vision({
+  vision,
+  changeVisionField,
+  editing,
+  setEditing,
+  setShowToastSaved,
+}) {
+  const { name, id } = vision || { name: "", text: "" };
   const [textV, setTextV] = React.useState("");
   const [show, setShow] = React.useState(true);
-  const [cookies, setCookie, removeCookie] = useCookies(['active-element']);
-
+  const [cookies, , ] = useCookies(["active-element"]);
 
   React.useEffect(() => {
     if (!editing) {
@@ -45,14 +50,14 @@ function Vision({ vision, changeVisionField, editing, setEditing, setShowToastSa
     console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     console.log(passPh);
     await changeVisionField(name, textV);
-    const pass = cookies['activeElement'];
+    const pass = cookies["activeElement"];
 
-    try{
+    try {
       await saveVision(id, textV, pass);
-    } catch(e){
-      console.log(e)
+    } catch (e) {
+      console.log(e);
     }
-    await setShowToastSaved(true)
+    await setShowToastSaved(true);
   };
 
   React.useEffect(() => {
@@ -65,12 +70,11 @@ function Vision({ vision, changeVisionField, editing, setEditing, setShowToastSa
       console.log(name);
       console.log(textV);
       await changeVisionField(name, textV);
-    const pass = cookies['activeElement'];
+      const pass = cookies["activeElement"];
 
       await saveVision(id, textV, pass);
       await setEditing(value);
-    await setShowToastSaved(true)
-
+      await setShowToastSaved(true);
     } else {
       await setTextV(vision && vision.text);
       await setEditing(value);

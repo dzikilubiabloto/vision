@@ -7,7 +7,6 @@
   // width: 90vw;
   color: black;
 
-
   .vision-edit {
     // width: 40vw;
     overflow-x: hidden;
@@ -23,9 +22,8 @@
       overflow-y: visible;
     }
   }
-  .break-column{
-      height: 50px !important;
-
+  .break-column {
+    height: 50px !important;
   }
   .vision-markdown {
     // padding-left: 110px;
@@ -55,10 +53,10 @@
 .vision-edit-save-button {
   max-width: 30px;
 }
-.alert-text{
-    font-size: 19px;
-    a{
-        text-decoration: none;
-        color: coral;
-    }
+.alert-text {
+  font-size: 19px;
+  a {
+    text-decoration: none;
+    color: coral;
+  }
 }

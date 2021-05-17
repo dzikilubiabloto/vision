@@ -12,7 +12,6 @@ import "../firebase/firebase.utils";
 const AuthContext = createContext();
 const auth = getAuth();
 
-
 export function useAuth() {
   return useContext(AuthContext);
 }
@@ -27,21 +26,24 @@ export default function AuthProvider({ children }) {
   };
 
   function signin(email, password) {
-    return signInWithEmailAndPassword(auth, email, password)
-  };
+    return signInWithEmailAndPassword(auth, email, password);
+  }
 
   function logout(email, password) {
-      return signOut(auth);
+    return signOut(auth);
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth,  (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);
-
     });
     return unsubscribe;
   }, []);
 
-  return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }

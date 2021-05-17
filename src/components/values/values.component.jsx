@@ -6,10 +6,12 @@ function Values() {
   return (
     <div className="values-container">
       <div className="values">
-        <div className=""><img
-          src="https://i.ibb.co/GcfgLcX/las-p3.jpg"
-          alt="calm lake and forest"
-        /></div>
+        <div className="">
+          <img
+            src="https://i.ibb.co/GcfgLcX/las-p3.jpg"
+            alt="calm lake and forest"
+          />
+        </div>
         <div id="write" className="">
           <p>
             <em>

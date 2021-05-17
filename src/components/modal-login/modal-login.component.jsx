@@ -3,11 +3,19 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
-import Alert from "react-bootstrap/Alert";
 
 import "./modal-login.styles.scss";
 
-export default function ModalLogin({show, handleClose, loginLoading, currentUser, changeEmail, changeName, changeText, shortName, warningMessage, handleCloseSave}) {
+export default function ModalLogin({
+  show,
+  handleClose,
+  loginLoading,
+  currentUser,
+  changeEmail,
+  changeName,
+  changeText,
+  handleCloseSave,
+}) {
   return (
     <Modal animation={false} show={show} onHide={handleClose}>
       {!loginLoading && !currentUser && (
@@ -53,7 +61,6 @@ export default function ModalLogin({show, handleClose, loginLoading, currentUser
             <InputGroup className="mb-3">
               <InputGroup.Prepend></InputGroup.Prepend>
             </InputGroup>
-            {shortName && <Alert variant="warning">{warningMessage}</Alert>}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
@@ -66,7 +73,10 @@ export default function ModalLogin({show, handleClose, loginLoading, currentUser
         </React.Fragment>
       )}
       {loginLoading && (
-        <img src="https://cdn.dribbble.com/users/160117/screenshots/3197970/main.gif" />
+        <img
+          alt="cat"
+          src="https://cdn.dribbble.com/users/160117/screenshots/3197970/main.gif"
+        />
       )}
       {currentUser && "Logged In!"}}
     </Modal>

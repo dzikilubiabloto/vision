@@ -17,7 +17,7 @@ function DocumentsData({ document, changeDocumentField }) {
   const { text, id } = document || { text: "", id: "" };
   const [editing, setEditing] = React.useState(false);
   const [showToastSaved, setShowToastSaved] = React.useState(false);
-  const [cookies, , ] = useCookies(["active-element"]);
+  const [cookies, ,] = useCookies(["active-element"]);
 
   const onTextChange3 = async (event) => {
     await changeDocumentField(event.target.value);

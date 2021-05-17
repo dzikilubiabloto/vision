@@ -37,13 +37,16 @@
       overflow-y: visible;
     }
   }
-  .document-container{
-    .vision-markdown{
+  .document-container {
+    .vision-markdown {
       margin-top: 30px;
-      h1, h2, h3, h4{
+      h1,
+      h2,
+      h3,
+      h4 {
         color: rgb(26, 26, 26) !important;
       }
-      a{
+      a {
         color: rgb(211, 151, 132) !important;
         text-decoration: none !important;
       }

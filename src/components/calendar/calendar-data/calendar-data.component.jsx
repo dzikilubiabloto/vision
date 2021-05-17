@@ -17,7 +17,7 @@ function CalendarData({ calendar, changeCalendarField }) {
   const { text, id } = calendar || { text: "", id: "" };
   const [editing, setEditing] = React.useState(false);
   const [showToastSaved, setShowToastSaved] = React.useState(false);
-  const [cookies, , ] = useCookies(["active-element"]);
+  const [cookies, ,] = useCookies(["active-element"]);
 
   const onTextChange3 = async (event) => {
     await changeCalendarField(event.target.value);
@@ -27,7 +27,6 @@ function CalendarData({ calendar, changeCalendarField }) {
 
   const save = async () => {
     const pass = cookies["activeElement"];
-
 
     await saveCalendar(id, text, pass);
     await setShowToastSaved(true);

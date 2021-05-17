@@ -18,7 +18,7 @@ import MeetingMinutes from "./meeting-minutes/meeting-minutes.component";
 
 function Meeting() {
   const [previousMinutes, setPreviousMinutes] = React.useState([]);
-  const [cookies, setCookie, removeCookie] = useCookies(["active-element"]);
+  const [cookies, ,] = useCookies(["active-element"]);
 
   React.useEffect(() => {
     const getData = async () => {
@@ -45,32 +45,32 @@ function Meeting() {
           alt="table with chairs next to big window with nature outside"
         />
       </Row>
-      
+
       <Row>
-      <Col className="meeting-tabs">
-        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-          <Tab eventKey="home" tabClassName="meeting-tab" title="general">
-            <MeetingGeneral />
-          </Tab>
-          <Tab
-            eventKey="profile"
-            tabClassName="meeting-tab"
-            title="next meeting agenda"
-          >
-            <MeetingAgenda
-              previousMinutes={previousMinutes}
-              saveMinutes={saveMinutes}
-              getMinutes={getMinutes}
-            />
-          </Tab>
-          <Tab
-            eventKey="contact"
-            tabClassName="meeting-tab"
-            title="meeting minutes"
-          >
-            <MeetingMinutes />
-          </Tab>
-        </Tabs>
+        <Col className="meeting-tabs">
+          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+            <Tab eventKey="home" tabClassName="meeting-tab" title="general">
+              <MeetingGeneral />
+            </Tab>
+            <Tab
+              eventKey="profile"
+              tabClassName="meeting-tab"
+              title="next meeting agenda"
+            >
+              <MeetingAgenda
+                previousMinutes={previousMinutes}
+                saveMinutes={saveMinutes}
+                getMinutes={getMinutes}
+              />
+            </Tab>
+            <Tab
+              eventKey="contact"
+              tabClassName="meeting-tab"
+              title="meeting minutes"
+            >
+              <MeetingMinutes />
+            </Tab>
+          </Tabs>
         </Col>
       </Row>
     </Container>

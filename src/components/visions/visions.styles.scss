@@ -1,29 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Bubbler+One&family=Montserrat+Alternates:wght@200&display=swap");
 @import "~bootstrap/scss/bootstrap";
 
-
 .visions-container {
   .visions-tabs {
     color: darkgrey;
     margin-top: 37px;
     .nav-link {
-      
       font-family: "Montserrat Alternates", sans-serif;
 
       font-family: "Bubbler One", sans-serif;
       text-transform: uppercase;
       color: unset;
 
-
       // color: rgb(129, 129, 125) !important;
-
     }
     .nav-item.active {
       text-decoration: none;
       color: coral;
     }
 
-    
     visions-tab {
       color: black;
     }

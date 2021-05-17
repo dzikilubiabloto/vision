@@ -2,7 +2,7 @@
   color: grey;
   //font-family: "Changa One", cursive;
   ////font-family: 'Galindo', cursive;
-  font-family: 'Lilita One', cursive;
+  font-family: "Lilita One", cursive;
   // font-family: "Passion One", cursive;
   font-size: 20px;
   // text-transform: uppercase;
@@ -17,11 +17,11 @@
   margin-bottom: 10px;
   background-color: white !important;
   z-index: 500;
-  div{
+  div {
     background-color: white;
   }
   .link {
-  background-color: white !important;
+    background-color: white !important;
     div {
       padding: 1px 11px 1px 11px;
     }
@@ -38,16 +38,15 @@
       text-decoration: none;
       color: coral;
     }
-
   }
-  .nav-link:active{
+  .nav-link:active {
     color: darksalmon;
   }
-  .act{
+  .act {
     color: rgb(253, 143, 133) !important;
   }
 
-  .link-login{
+  .link-login {
     color: lightgrey !important;
   }
   a {

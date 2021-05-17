@@ -5,8 +5,7 @@ import { useCookies } from "react-cookie";
 
 export default function Documents() {
   const [document, setDocument] = React.useState({ text: "", id: "" });
-  const [cookies, , ] = useCookies(["active-element"]);
-
+  const [cookies, ,] = useCookies(["active-element"]);
 
   // TODO move this crypto to db utils
   const changeDocumentField = async (value) => {
