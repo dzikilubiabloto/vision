@@ -1,8 +1,8 @@
 import React from "react";
 
 import ReactMarkdown from "react-markdown";
-import StringCrypto from "string-crypto";
 import Toast from "react-bootstrap/Toast";
+import { useCookies } from "react-cookie";
 
 import gfm from "remark-gfm";
 
@@ -10,26 +10,24 @@ import { useAuth } from "../../../context/auth.context";
 import { saveDocument } from "../../../firebase/documents.utils";
 
 import "./documents-data.styles.scss";
-import { Container, Col, Row, Button, Alert } from "react-bootstrap";
+import { Container, Col, Row, Button } from "react-bootstrap";
 const re = /<!--((.|[\n|\r|\r\n])*?)-->[\n|\r|\r\n]?(\s+)?/g;
 
 function DocumentsData({ document, changeDocumentField }) {
   const { text, id } = document || { text: "", id: "" };
-  const password = "./documents-data.styles.scss/llllkhhhnbn/";
   const [editing, setEditing] = React.useState(false);
   const [showToastSaved, setShowToastSaved] = React.useState(false);
+  const [cookies, , ] = useCookies(["active-element"]);
 
   const onTextChange3 = async (event) => {
     await changeDocumentField(event.target.value);
   };
-  const { encryptString } = new StringCrypto();
 
   const { currentUser } = useAuth();
 
   const save = async () => {
-    let encryptedString = encryptString(text, password);
-
-    await saveDocument(id, encryptedString, true);
+    const pass = cookies["activeElement"];
+    await saveDocument(id, text, pass);
     await setShowToastSaved(true);
   };
 
