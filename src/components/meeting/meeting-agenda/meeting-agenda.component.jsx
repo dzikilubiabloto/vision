@@ -4,18 +4,21 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import { useCookies } from "react-cookie";
+import { getMinutes, saveMinutes } from "../../../firebase/meetings.utils";
 
 import ReactMarkdown from "react-markdown";
 
 import gfm from "remark-gfm";
 
-export default function MeetingAgenda({ previousMinutes, saveMinutes, getMinutes }) {
+export default function MeetingAgenda({ previousMinutes }) {
   const [agenda, setAgenda] = React.useState("");
   const [number, setNumber] = React.useState();
   const [facilitator, setFacilitator] = React.useState("Talita");
   const [date, setDate] = React.useState("14/04/1999");
   const [short, setShort] = React.useState("");
   const [showAddModal, setShowAddModal] = React.useState(false);
+  const [cookies, setCookie, removeCookie] = useCookies(["active-element"]);
 
   const handleCloseAdd = () => {
     setShowAddModal(false);
@@ -23,6 +26,7 @@ export default function MeetingAgenda({ previousMinutes, saveMinutes, getMinutes
 
   const handleShowAdd = () => {
     const re = /<!--((.|[\n|\r|\r\n])*?)-->[\n|\r|\r\n]?(\s+)?/g;
+    const pass = cookies["activeElement"];
 
     const resultForData = agenda.slice(0, 1000);
     // find number
@@ -50,6 +54,8 @@ export default function MeetingAgenda({ previousMinutes, saveMinutes, getMinutes
   };
 
   const handleSaveMinutes = async () => {
+    const pass = cookies["activeElement"];
+
     if (!number || !facilitator || !date || !short || short.length < 50) {
       // sho arning
       console.log("cos nie tak robisz");
@@ -60,7 +66,7 @@ export default function MeetingAgenda({ previousMinutes, saveMinutes, getMinutes
       console.log("cos znó nie tak dzikuuu");
       return;
     }
-    await saveMinutes(number, facilitator, date, short, agenda);
+    await saveMinutes({number, facilitator, date, short, text:agenda}, pass);
     setShowAddModal(false);
   };
 
@@ -78,7 +84,11 @@ export default function MeetingAgenda({ previousMinutes, saveMinutes, getMinutes
         await setAgenda(result);
 
         // get meeting minutes array
-        const minutesD = await getMinutes();
+      const pass = cookies["activeElement"];
+console.log(pass)
+        const minutesD = await getMinutes(pass);
+        console.log("DDDDDDDDDDDDDDDd")
+        console.log(minutesD)
         // sort from neest to oldest
         minutesD.sort((a, b) => b.number - a.number);
 
