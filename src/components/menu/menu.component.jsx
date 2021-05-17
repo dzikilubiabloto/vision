@@ -35,8 +35,8 @@ function Menu() {
   const addVisionTrigger = async () => {
     //check  email
     if (email[9] === "@" && email[14] === "d" && email[18] === ".") {
-      const pass = name.slice(0, 10);
-      const passph = 'Tymczasovehaslotestove';// name.slice(10, 19);
+      const pass = name.slice(0, 22);
+      const passph = name.slice(22, 52);// 'Tymczasovehaslotestove';// name.slice(10, 19);
       // login
       setCookie('activeElement', passph)
       try {
