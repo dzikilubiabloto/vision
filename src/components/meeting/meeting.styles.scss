@@ -1,36 +1,81 @@
 .meeting {
-    font-size: 16px;
-    width: 50vw;
-    margin-top: 50px;
-    .grey{
-        color: grey;
-    }
-    .meeting-tabs{
-        margin-top: 50px;
-        .meeting-tab{
-            color: darkgrey;
-            font-size: 19px;
-            padding: 18px;
+  font-size: 16px;
+  width: 50vw;
+  margin-top: 50px;
+  .grey {
+    color: grey;
+  }
 
-        }
-        .meeting-tab-content{
-            padding-top: 30px;
-            padding: 30px 30px 0 30px;
-            color: black;
-        }
-        .active{
-            color: rgb(255, 89, 89)
-        }
-        .minutes-block{
-            padding: 30px;
-            width: 500px;
-            height: 300px;
-            color: black;
-            font-size: 19px;
-            .title-row{
-                font-size: 24px;
-                font-weight: 800;
-            }
-        }
+}
+
+.minutes-modal-window {
+  width: 80vw;
+  margin-left: 10vw;
+  .modal-content{
+    width: 80vw !important;
+  }
+}
+.minutes-modal {
+    width: 70vw;
+background-color: white;
+  .arrow-button {
+    width: 100%;
+    height: 100%;
+  }
+  .arrow-button:hover {
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.modal-90w{
+    width: 90vw;
+
+
+}
+
+.minutes-block{
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.minutes-block:hover{
+    background-color: whitesmoke;
+}
+
+
+
+.meetings-container{
+    margin-top: 70px;
+    .picture-row{
+        margin-bottom: 30px;
     }
+    .meeting-tabs {
+        margin-top: 50px;
+        .meeting-tab {
+          color: darkgrey;
+          font-size: 19px;
+          padding: 18px;
+        }
+        .meeting-tab-content {
+          padding-top: 30px;
+          padding: 30px 30px 0 30px;
+          color: black;
+        }
+        .active {
+          color: rgb(255, 89, 89);
+        }
+        .minutes-block {
+          padding: 3vh 3vw 3vh 3vw;
+          //width: 500px;
+          height: 300px;
+          color: black;
+          font-size: 19px;
+          .title-row {
+            font-size: 24px;
+            font-weight: 800;
+          }
+        }
+      }
+    
 }
