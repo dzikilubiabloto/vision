@@ -5,11 +5,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
+
 import { useCookies } from "react-cookie";
 
 import ReactMarkdown from "react-markdown";
 
 import gfm from "remark-gfm";
+
 import { getMinutes } from "../../../firebase/meetings.utils";
 
 export default function MeetingMinutes() {
@@ -28,6 +30,8 @@ export default function MeetingMinutes() {
         const minutesD = await getMinutes(pass);
 
         // sort from neest to oldest
+
+        minutesD.sort((a, b) => (a.number < b.number) ? 1 : -1)
 
         await setPreviousMinutes(minutesD);
       } catch (e) {

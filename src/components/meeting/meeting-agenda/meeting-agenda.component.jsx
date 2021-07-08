@@ -4,12 +4,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+
 import { useCookies } from "react-cookie";
-import { getMinutes, saveMinutes } from "../../../firebase/meetings.utils";
 
 import ReactMarkdown from "react-markdown";
 
 import gfm from "remark-gfm";
+
+import { getMinutes, saveMinutes } from "../../../firebase/meetings.utils";
 
 export default function MeetingAgenda({ previousMinutes }) {
   const [agenda, setAgenda] = React.useState("");
@@ -69,7 +71,7 @@ export default function MeetingAgenda({ previousMinutes }) {
   };
 
   const meetingMinutesLink =
-    "https://codi.kanthaus.online/communities-meeting/download";
+    "https://pad.kanthaus.online/communities-meeting/download";
   const re = /<!--((.|[\n|\r|\r\n])*?)-->[\n|\r|\r\n]?(\s+)?/g;
 
   React.useEffect(() => {

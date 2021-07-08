@@ -3,10 +3,10 @@ import "firebase/compat/firestore";
 import { updateDoc } from "firebase/firestore";
 import { collection, query, getDocs } from "firebase/firestore";
 
-import "./firebase.utils";
-
-
 import StringCrypto from "string-crypto";
+
+import "./firebase.utils";
+import { checkPassPhrase } from "./visions.utils";
 
 const db = firebase.firestore();
 
@@ -21,6 +21,10 @@ export const saveCalendar = async (id, text, pass) => {
 
   // Add a new document in collection "cities"
   try {
+    if(!await checkPassPhrase(pass)){
+      // handle it upstairs
+      return false;
+    }
     const ref = await db.collection("calendars").doc(id);
     await updateDoc(ref, {
       text: encryptedText,
@@ -39,6 +43,10 @@ export const getCalendar = async (pass) => {
   const calendars = [];
 
   try {
+    if(!await checkPassPhrase(pass)){
+      // handle it upstairs
+      return {text: ''};
+    }
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots

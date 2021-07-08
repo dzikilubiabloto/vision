@@ -1,12 +1,17 @@
 import React from "react";
+
 import Col from "react-bootstrap/Col";
 
 import ReactMarkdown from "react-markdown";
+
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+
 import gfm from "remark-gfm";
+
 import Alert from "react-bootstrap/Alert";
+
 import { useCookies } from "react-cookie";
 
 import { useAuth } from "../../../context/auth.context";
@@ -20,17 +25,22 @@ function Vision({
   editing,
   setEditing,
   setShowToastSaved,
+  questions
 }) {
   const { name, id } = vision || { name: "", text: "" };
   const [textV, setTextV] = React.useState("");
   const [show, setShow] = React.useState(true);
-  const [cookies, , ] = useCookies(["active-element"]);
+  const [cookies, ,] = useCookies(["active-element"]);
 
   React.useEffect(() => {
     if (!editing) {
       setTextV(vision && vision.text);
     }
   });
+
+  const onQChange = (id) => {
+    console.log(id)
+  }
 
   const changeVisionFieldLocal = (name, value) => {
     /* let oldDict = { ...visionsDictState };
@@ -52,8 +62,8 @@ function Vision({
     try {
       await saveVision(id, textV, pass);
     } catch (e) {
-      // TODO 
-      setShowToastSaved(false)
+      // TODO
+      setShowToastSaved(false);
     }
     await setShowToastSaved(true);
   };
@@ -93,7 +103,7 @@ function Vision({
                 preview in the white area. Use markdown to format text. You can
                 change text size - headers, add images, lines. To see
                 insturctions on how to use markdown check this page:
-                <a href="https://codi.kanthaus.online/features?both">
+                <a href="https://pad.kanthaus.online/features?both">
                   {" "}
                   instruction
                 </a>
@@ -171,12 +181,33 @@ function Vision({
           <div
             className={"vision-markdown" + (!editing ? " editing-markdon" : "")}
           >
-            <ReactMarkdown
-              remarkPlugins={[gfm]}
-            >textV</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[gfm]}>{textV}</ReactMarkdown>
           </div>
         </Col>
       </Row>
+
+      {/** questions part */}
+      {/* Lets try rov for each question */}
+      {questions.map( q => (<Row key={q.id} className="vision-container-q">
+      
+      {currentUser && editing && (
+        <Col lg={6} md={12} xs={12}>
+        <div>{q.text}</div>
+          <div className={"vision-edit"}>
+            <textarea value={q.answers[name] && q.answers[name].text} onChange={onQChange(q.id)}></textarea>
+          </div>
+        </Col>
+      )}
+      <Col lg={1}></Col>
+      <Col lg={currentUser && editing ? 5 : 12} md={12} xs={12}>
+        <div
+          className={"vision-markdown" + (!editing ? " editing-markdon" : "")}
+        >
+        <div>{q.text}</div>
+          <ReactMarkdown remarkPlugins={[gfm]}>{q.answers[name] && q.answers[name].text}</ReactMarkdown>
+        </div>
+      </Col>
+    </Row>))}
     </Container>
   );
 }

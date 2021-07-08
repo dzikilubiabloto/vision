@@ -3,8 +3,10 @@ import "firebase/compat/firestore";
 import { addDoc, updateDoc } from "firebase/firestore";
 import { collection, query, getDocs } from "firebase/firestore";
 
-import "./firebase.utils";
 import StringCrypto from "string-crypto";
+
+import "./firebase.utils";
+import { checkPassPhrase } from "./visions.utils";
 
 const db = firebase.firestore();
 const { encryptString, decryptString } = new StringCrypto();
@@ -20,6 +22,10 @@ export const saveMinutes = async (
 
   // Add a new document in collection "cities"
   try {
+    if(!await checkPassPhrase(pass)){
+      // handle it upstairs
+      return false;
+    }
     await addDoc(collection(db, "minutes"), {
       number,
       facilitator: encryptedFacilitator,
@@ -38,6 +44,10 @@ export const saveAgenda = async (id, text, pass) => {
 
   // Add a new document in collection "cities"
   try {
+    if(!await checkPassPhrase(pass)){
+      // handle it upstairs
+      return false;
+    }
     const ref = await db.collection("agenda").doc(id);
     await updateDoc(ref, {
       text: encryptedText,
@@ -64,6 +74,10 @@ export const getAgenda = async (pass) => {
   const querySnapshot = await getDocs(q);
 
   try {
+    if(!await checkPassPhrase(pass)){
+      // handle it upstairs
+      return {text: ''};
+    }
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
       documents.push({
@@ -88,6 +102,10 @@ export const getMinutes = async (pass) => {
   const querySnapshot = await getDocs(q);
 
   try {
+    if(!await checkPassPhrase(pass)){
+      // handle it upstairs
+      return [];
+    }
     await querySnapshot.forEach(async (doc) => {
       // doc.data() is never undefined for query doc snapshots
       documents.push({

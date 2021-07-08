@@ -1,25 +1,18 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import { updateDoc } from "firebase/firestore";
 import {
   collection,
   query,
-  where,
   getDocs,
-  getDoc,
-  setDoc,
-  addDoc,
-  doc,
 } from "firebase/firestore";
-
-import StringCrypto from "string-crypto";
 
 import "./firebase.utils";
 
 const db = firebase.firestore();
 
-const { encryptString, decryptString } = new StringCrypto();
+// const { encryptString, decryptString } = new StringCrypto();
 
+/*
 export const checkPassPhrase = async (pass) => {
   const docRef = doc(db, "test", "test");
   const docSnap = await getDoc(docRef);
@@ -128,27 +121,37 @@ export const saveVision = async (id, text, pass) => {
   } catch (e) {
     console.error("Error adding vision document: ", e);
   }
-};
+}; */
 
-export const getVisions = async (pass) => {
+export const getQuestions = async () => {
   // check if vision ith this name exists
 
-  const q = query(collection(db, "visions"), where("visible", "==", true));
+  const q = query(collection(db, "questions"));
 
   const documents = [];
-  if (!(await checkPassPhrase(pass))) {
-    // handle it upstairs
-    return [];
-  }
+  //   if (!(await checkPassPhrase(pass))) {
+  //     // handle it upstairs
+  //     return [];
+  //   }
   const querySnapshot = await getDocs(q);
 
   try {
-    querySnapshot.forEach(async (doc) => {
+    querySnapshot.forEach(async (docD) => {
       // doc.data() is never undefined for query doc snapshots
+      const q3 = query(collection(db,'questions', docD.id, 'answers'));
+      const ans = await getDocs(q3)
+      const ansDict = {};
+      ans.forEach(async (doc3) => {
+        ansDict[doc3.data().user] = {
+          ...doc3.data()
+        }
+
+      })
+
       documents.push({
-        id: doc.id,
-        name: doc.data().name,
-        text: doc.data().text && decryptString(doc.data().text, pass),
+        ...docD.data(),
+        id: docD.id,
+        answers: ansDict
       });
     });
   } catch (e) {

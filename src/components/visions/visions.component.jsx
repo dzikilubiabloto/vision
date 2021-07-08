@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from "react";
+
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
+
 import { useCookies } from "react-cookie";
+
 import Toast from "react-bootstrap/Toast";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { Container, Row, Col } from "react-bootstrap";
+
+import { getQuestions } from "../../firebase/questions.utils";
 import { addVision, getVisions } from "../../firebase/visions.utils";
 
 import "./visions.styles.scss";
 
 import Vision from "./vision/vision.component";
-import { Container, Row, Col } from "react-bootstrap";
 
 function Visions() {
   const [currentVision, setCurrentVision] = useState("");
   const [visionsDictState, setVisionsDictState] = useState({});
+  const [questionsDictState, setQuestionsDictState] = useState([]);
   const [names, setNames] = useState([]);
   const [show, setShow] = useState(false);
   const [shortName, setShortName] = useState(false);
@@ -53,7 +60,8 @@ function Visions() {
       setLoadingVisions(true);
       const pass = cookies["activeElement"];
       const visions3 = await getVisions(pass);
-
+      const questions3 = await getQuestions();
+      console.log("LLLLLLLLLLLLLLLLL",questions3)
       let visionsDict = {};
 
       let namesTemp = [];
@@ -69,6 +77,7 @@ function Visions() {
 
       setNames(namesTemp);
       setVisionsDictState(visionsDict);
+      setQuestionsDictState(questions3)
       const randomNumber = Math.floor(Math.random() * visions3.length);
 
       setCurrentVision((prev) => {
@@ -92,9 +101,9 @@ function Visions() {
 
   const addVisionTrigger = async (name) => {
     const namesLower = names.map((name) => name.toLowerCase());
-    if (name.length < 2 || name.length > 10) {
+    if (name.length < 2 || name.length > 15) {
       setShortName(true);
-      setWarningMessage("Profile name should be 2-10 characters long.");
+      setWarningMessage("Profile name should be 2-15 characters long.");
       return false;
     } else if (!name.match("^[A-Za-z0-9]+$")) {
       setWarningMessage("Just letters and numbers.");
@@ -194,6 +203,7 @@ function Visions() {
                 setLastVisitedName={setLastVisitedName}
                 setLastVisitedText={setLastVisitedText}
                 setShowToastSaved={setShowToastSaved}
+                questions = {questionsDictState}
               />
             </Tab>
           ))}

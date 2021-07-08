@@ -9,7 +9,7 @@ import Dreaming from "../dreaming/dreaming.component";
 import Meeting from "../meeting/meeting.component";
 import PrivateRoute from "../private-route/pirvate-route.component";
 import Values from "../values/values.component";
-import { quotes } from "../../data/console.quotes";
+import quotes from "../../data/console.quotes";
 
 import "./page.styles.scss";
 
@@ -23,7 +23,7 @@ function Page() {
   );
 
   const i = Math.floor(Math.random() * 3);
-  const [quote, author] = quotes[i];
+  const [quote, author] = quotes.quotes[i];
   console.log(
     "%c%s",
     "font-size: 18px ; line-height: 20px ;" +
