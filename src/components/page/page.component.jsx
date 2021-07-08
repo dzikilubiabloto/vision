@@ -53,7 +53,7 @@ function Page() {
         <PrivateRoute path="/vision/documents" component={Documents} />
         <PrivateRoute path="/vision/calendar" component={Calendar} />
         <Route exact path="/vision/books" component={Books} />
-        <Route exact path="/vision/meeting" component={Meeting} />
+        <PrivateRoute exact path="/vision/meeting" component={Meeting} />
       </Switch>
     </div>
   );

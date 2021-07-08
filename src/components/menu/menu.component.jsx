@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
 import { NavLink } from "react-router-dom";
+
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+
 import { useCookies } from "react-cookie";
 
+import ModalLogin from "../modal-login/modal-login.component";
+import ModalLogout from "../modal-logout/modal-logout.component";
 import { useAuth } from "../../context/auth.context";
 
 import "./menu.styles.scss";
-import ModalLogout from "../modal-logout/modal-logout.component";
-import ModalLogin from "../modal-login/modal-login.component";
 
 function Menu() {
   const { signin, currentUser, logout } = useAuth();
@@ -139,13 +141,13 @@ function Menu() {
               <div>books/links</div>
             </NavLink>
 
-            <NavLink
+            {currentUser && <NavLink
               to="/vision/meeting"
               className="link nav-link"
               activeClassName="act"
             >
               <div>meeting</div>
-            </NavLink>
+            </NavLink>}
 
             {!currentUser && (
               <div className="link nav-link link-login" onClick={handleShow}>
